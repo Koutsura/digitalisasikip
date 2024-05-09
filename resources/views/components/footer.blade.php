@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="footer-left">
-        &copy; 2024 Vicky Maulana | <a href="https://www.vickymaulana.my.id">My Portofolio</a>
+        Copyright &copy; 2024 <div class="bullet"></div> Digitalisasi KIP LLDIKTI Wilayah II. All Right Reserved.</a>
     </div>
     <div class="footer-right">
         1.0.0
