@@ -12,6 +12,20 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
+        $middleware->alias([
+
+            'superadmin' => \App\Http\Middleware\superadmin::class,
+            /* 'akreditasi' => \App\Http\Middleware\akreditasi::class,
+            'berita' => \App\Http\Middleware\berita::class,
+            'pt' => \App\Http\Middleware\dataperguruantinggi::class,
+            'prodi' => \App\Http\Middleware\dataprodi::class,
+            'fasilitas_pt' => \App\Http\Middleware\fasilitas_pt::class,
+            'fasilitasprodi' => \App\Http\Middleware\fasilitasprodi::class,
+            'pedoman' => \App\Http\Middleware\pedoman::class,
+            'statuta' => \App\Http\Middleware\statuta::class,
+            'struktural' => \App\Http\Middleware\struktural::class,
+            'sdm' => \App\Http\Middleware\sdm::class, */
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

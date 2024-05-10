@@ -20,12 +20,12 @@
             <li class="{{ Request::is('home') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('home') }}"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
-            @if (auth()->user()->role == 'superadmin')
+            {{--  @if (auth()->user()->role == 'superadmin')  --}}
             <li class="menu-header">Hak Akses</li>
             <li class="{{ Request::is('hakakses') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('hakakses') }}"><i class="fas fa-user"></i> <span>Edit Role</span></a>
             </li>
-            @endif
+            {{--  @endif  --}}
             <li class="menu-header">Profile</li>
             <li class="{{ Request::is('profile/edit') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('profile/edit') }}"><i class="fas fa-user"></i> <span>Edit Profile</span></a>
@@ -33,7 +33,7 @@
             <li class="{{ Request::is('profile/ganti-password') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('profile/ganti-password') }}"><i class="fas fa-key"></i> <span>Ganti Password</span></a>
             </li>
-            @if (auth()->user()->role == 'berita' || auth()->user()->role == 'superadmin')
+            {{--  @if (auth()->user()->role == 'berita' || auth()->user()->role == 'superadmin')
             <li class="menu-header">Pages</li>
             <li class="{{ Request::is('berita') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('berita') }}"><i class="fas fa-newspaper"></i> <span>Data Berita</span></a>
@@ -83,7 +83,7 @@
             <li class="{{ Request::is('pedoman') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('pedoman') }}"><i class="fas fa-university"></i> <span>Data Pedoman</span></a>
             </li>
-            @endif
+            @endif  --}}
         </ul>
     </aside>
 </div>
