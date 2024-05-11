@@ -14,7 +14,7 @@ class DataProdiController extends Controller
     {
         $search = $request->get('search');
         if ($search) {
-            $data['data_prodi'] = data_prodi::where('nama_prodi', 'like', "%{$search}%")->get();
+            $data['data_prodi'] = data_prodi::where('kode_prodi', 'like', "%{$search}%")->get();
         } else {
             $data['data_prodi'] = data_prodi::all();
         }
@@ -36,12 +36,12 @@ class DataProdiController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        /* $request->validate([
         'kode_prodi' => 'required|string|max:100',
         'nama_prodi' => 'required|string|max:100',
         'kode_pt' => 'required|string|max:100',
         'nama_pt' => 'required|string|max:100',
-         ]);
+         ]); */
 
         $data_prodi = new data_prodi();
         $data_prodi->kode_prodi = $request->kode_prodi;
@@ -86,18 +86,17 @@ class DataProdiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        /* $request->validate([
         'kode_prodi' => 'required|string|max:100',
         'nama_prodi' => 'required|string|max:100',
         'kode_pt' => 'required|string|max:100',
         'nama_pt' => 'required|string|max:100',
-        ]);
+        ]); */
 
         $data_prodi = data_prodi::find($id);
         if (!$data_prodi) {
             return redirect()->back()->with('error', 'Data Prodi tidak ditemukan');
         }
-        $data_prodi = new data_prodi();
         $data_prodi->kode_prodi = $request->kode_prodi;
         $data_prodi->nama_prodi = $request->nama_prodi;
         $data_prodi->kode_pt = $request->kode_pt;
@@ -142,9 +141,9 @@ class DataProdiController extends Controller
             }
         } */
         if ($data_prodi->delete()) {
-            return redirect()->route('data_prodi.index')->with('message', 'Data Prodi Berhasil Disimpan.');
+            return redirect()->route('data_prodi.index')->with('message', 'Data Prodi Berhasil Dihapus.');
         } else {
-            return redirect()->back()->with('error', 'Gagal Menyimpan Data Prodi.');
+            return redirect()->back()->with('error', 'Gagal Menghapus Data Prodi.');
         }
         return redirect()->route('data_prodi.index');
         //
