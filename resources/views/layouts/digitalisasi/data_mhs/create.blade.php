@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nama_mhs">Nama Mahasiswa</label>
-                        <input type="text" name="nim_mhs" id="nim_mhs" class="form-control" required maxlength="100">
+                        <input type="text" name="nama_mhs" id="nama_mhs" class="form-control" required maxlength="100">
                     </div>
                     <div class="form-group">
                         <label for="tempatlahir_mhs">Tempat Lahir</label>

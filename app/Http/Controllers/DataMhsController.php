@@ -36,16 +36,16 @@ class DataMhsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nim_mhs' => 'required|string|max:100',
-            'nama_mhs' => 'required|string|max:100',
-            'tempatlahir_mhs' => 'required|string|max:100',
-            'tanggallahir_mhs' => 'required|date',
-            'jumlah_semaktif' => 'required|string|max:10000',
-            'jumlah_semcuti' => 'required|string|max:10000',
-            'kode_prodi' => 'required|string|max:100',
-            'nama_prodi' => 'required|string|max:100',
-        ]);
+        // $request->validate([
+        //     'nim_mhs' => 'required|string|max:100',
+        //     'nama_mhs' => 'required|string|max:100',
+        //     'tempatlahir_mhs' => 'required|string|max:100',
+        //     'tanggallahir_mhs' => 'required|date',
+        //     'jumlah_semaktif' => 'required|string|max:10000',
+        //     'jumlah_semcuti' => 'required|string|max:10000',
+        //     'kode_prodi' => 'required|string|max:100',
+        //     'nama_prodi' => 'required|string|max:100',
+        // ]);
 
         $data_mhs = new data_mhs();
         $data_mhs->nim_mhs = $request->nim_mhs;
@@ -53,6 +53,7 @@ class DataMhsController extends Controller
         $data_mhs->tempatlahir_mhs = $request->tempatlahir_mhs;
         $data_mhs->tanggallahir_mhs = $request->tanggallahir_mhs;
         $data_mhs->jumlah_semaktif = $request->jumlah_semaktif;
+        $data_mhs->jumlah_semcuti = $request->jumlah_semcuti;
         $data_mhs->kode_prodi = $request->kode_prodi;
         $data_mhs->nama_prodi = $request->nama_prodi;
 

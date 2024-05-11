@@ -46,7 +46,6 @@
                                 <th>Nama Mahasiswa</th>
                                 <th>Tempat Lahir</th>
                                 <th>Tanggal Lahir</th>
-                                <th>jumlah semester yang sudah ditempuh</th>
                                 <th>jumlah semester aktif</th>
                                 <th>jumlah semester Cuti</th>
                                 <th>Kode Prodi</th>
