@@ -36,16 +36,16 @@ class DataMhsController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'nim_mhs' => 'required|string|max:100',
-        //     'nama_mhs' => 'required|string|max:100',
-        //     'tempatlahir_mhs' => 'required|string|max:100',
-        //     'tanggallahir_mhs' => 'required|date',
-        //     'jumlah_semaktif' => 'required|string|max:10000',
-        //     'jumlah_semcuti' => 'required|string|max:10000',
-        //     'kode_prodi' => 'required|string|max:100',
-        //     'nama_prodi' => 'required|string|max:100',
-        // ]);
+        $request->validate([
+        'nim_mhs' => 'required|string|max:100',
+        'nama_mhs' => 'required|string|max:100',
+        'tempatlahir_mhs' => 'required|string|max:100',
+        'tanggallahir_mhs' => 'required|date',
+        'jumlah_semaktif' => 'required|string|max:10000',
+        'jumlah_semcuti' => 'required|string|max:10000',
+        'kode_prodi' => 'required|string|max:100',
+        'nama_prodi' => 'required|string|max:100',
+         ]);
 
         $data_mhs = new data_mhs();
         $data_mhs->nim_mhs = $request->nim_mhs;
@@ -83,7 +83,7 @@ class DataMhsController extends Controller
      */
     public function edit($id)
     {
-        $akreditasi = data_mhs::find($id);
+        $data_mhs = data_mhs::find($id);
 
         return view('layouts.digitalisasi.data_mhs.edit', compact('data_mhs'));
         //
@@ -114,6 +114,7 @@ class DataMhsController extends Controller
         $data_mhs->tempatlahir_mhs = $request->tempatlahir_mhs;
         $data_mhs->tanggallahir_mhs = $request->tanggallahir_mhs;
         $data_mhs->jumlah_semaktif = $request->jumlah_semaktif;
+        $data_mhs->jumlah_semcuti = $request->jumlah_semcuti;
         $data_mhs->kode_prodi = $request->kode_prodi;
         $data_mhs->nama_prodi = $request->nama_prodi;
 
@@ -156,9 +157,9 @@ class DataMhsController extends Controller
             }
         } */
         if ($data_mhs->delete()) {
-            return redirect()->route('data_mhs.index')->with('message', 'Data Mahasiswa Berhasil Disimpan.');
+            return redirect()->route('data_mhs.index')->with('message', 'Data Mahasiswa Berhasil Dihapus.');
         } else {
-            return redirect()->back()->with('error', 'Gagal Menyimpan Data Mahasiswa.');
+            return redirect()->back()->with('error', 'Gagal Menghapus Data Mahasiswa.');
         }
         return redirect()->route('data_mhs.index');
         //

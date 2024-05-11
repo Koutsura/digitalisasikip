@@ -28,7 +28,7 @@
 
                 <div class="form-group">
                     <label for="tempatlahir_mhs">Tempat Lahir</label>
-                    <input type="teks" name="tempatlahir_mhs" id="tempatlahir_mhs" class="form-control" value="{{ $data_mhs->tempatlahir_mhs }}" maxlength="100">
+                    <input type="text" name="tempatlahir_mhs" id="tempatlahir_mhs" class="form-control" value="{{ $data_mhs->tempatlahir_mhs }}" maxlength="100">
                 </div>
 
                 <div class="form-group">
@@ -38,7 +38,7 @@
 
                 <div class="form-group">
                     <label for="jumlah_semaktif">Jumlah Semester Aktif</label>
-                    <input type="teks" name="jumlah_semaktif" id="jumlah_semaktif" class="form-control" value="{{ $data_mhs->jumlah_semaktif }}" maxlength="100">
+                    <input type="text" name="jumlah_semaktif" id="jumlah_semaktif" class="form-control" value="{{ $data_mhs->jumlah_semaktif }}" maxlength="100">
                 </div>
 
                 <div class="form-group">
@@ -48,12 +48,12 @@
 
                 <div class="form-group">
                     <label for="kode_prodi">Kode Prodi</label>
-                    <input type="teks" name="kode_prodi" id="kode_prodi" class="form-control" value="{{ $data_mhs->kode_prodi }}" maxlength="100">
+                    <input type="text" name="kode_prodi" id="kode_prodi" class="form-control" value="{{ $data_mhs->kode_prodi }}" maxlength="100">
                 </div>
 
                 <div class="form-group">
                     <label for="nama_prodi">Nama Prodi</label>
-                    <input type="teks" name="nama_prodi" id="nama_prodi" class="form-control" value="{{ $data_mhs->nama_prodi }}" maxlength="125">
+                    <input type="text" name="nama_prodi" id="nama_prodi" class="form-control" value="{{ $data_mhs->nama_prodi }}" maxlength="125">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Update</button>
