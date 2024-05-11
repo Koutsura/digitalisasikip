@@ -10,8 +10,15 @@ class DataMhsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->get('search');
+        if ($search) {
+            $data['data_mhs'] = data_mhs::where('nama_mhs', 'like', "%{$search}%")->get();
+        } else {
+            $data['data_mhs'] = data_mhs::all();
+        }
+        return view('layouts.digitalisasi.data_mhs.index', $data);
         //
     }
 
@@ -20,6 +27,7 @@ class DataMhsController extends Controller
      */
     public function create()
     {
+        return view('layouts.digitalisasi.data_mhs.create');
         //
     }
 
@@ -28,7 +36,37 @@ class DataMhsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nim_mhs' => 'required|string|max:100',
+            'nama_mhs' => 'required|string|max:100',
+            'tempatlahir_mhs' => 'required|string|max:100',
+            'tanggallahir_mhs' => 'required|date',
+            'jumlah_semaktif' => 'required|string|max:10000',
+            'jumlah_semcuti' => 'required|string|max:10000',
+            'kode_prodi' => 'required|string|max:100',
+            'nama_prodi' => 'required|string|max:100',
+        ]);
+
+        $data_mhs = new data_mhs();
+        $data_mhs->nim_mhs = $request->nim_mhs;
+        $data_mhs->nama_mhs = $request->nama_mhs;
+        $data_mhs->tempatlahir_mhs = $request->tempatlahir_mhs;
+        $data_mhs->tanggallahir_mhs = $request->tanggallahir_mhs;
+        $data_mhs->jumlah_semaktif = $request->jumlah_semaktif;
+        $data_mhs->kode_prodi = $request->kode_prodi;
+        $data_mhs->nama_prodi = $request->nama_prodi;
+
+        /* if ($request->hasFile('image_akreditasi')) {
+            $imageName = $request->prodi . '_image_akreditasi_' . date('YmdHis') . '.' . $request->file('image_akreditasi')->extension();
+            $request->file('image_akreditasi')->move(public_path('images/akreditasi/'), $imageName);
+            $akreditasi->image_akreditasi = $imageName;
+        } */
+
+        if ($data_mhs->save()) {
+            return redirect()->route('data_mhs.index')->with('message', 'Data Mahasiswa Berhasil Disimpan.');
+        } else {
+            return redirect()->back()->with('error', 'Gagal Menyimpan Data Mahasiswa.');
+        }
     }
 
     /**
@@ -42,24 +80,86 @@ class DataMhsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(data_mhs $data_mhs)
+    public function edit($id)
     {
+        $akreditasi = data_mhs::find($id);
+
+        return view('layouts.digitalisasi.data_mhs.edit', compact('data_mhs'));
         //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, data_mhs $data_mhs)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'nim_mhs' => 'required|string|max:100',
+            'nama_mhs' => 'required|string|max:100',
+            'tempatlahir_mhs' => 'required|string|max:100',
+            'tanggallahir_mhs' => 'required|date',
+            'jumlah_semaktif' => 'required|string|max:10000',
+            'jumlah_semcuti' => 'required|string|max:10000',
+            'kode_prodi' => 'required|string|max:100',
+            'nama_prodi' => 'required|string|max:100',
+        ]);
+
+        $data_mhs = data_mhs::find($id);
+        if (!$data_mhs) {
+            return redirect()->back()->with('error', 'Data Mahasiswa tidak ditemukan');
+        }
+        $data_mhs->nim_mhs = $request->nim_mhs;
+        $data_mhs->nama_mhs = $request->nama_mhs;
+        $data_mhs->tempatlahir_mhs = $request->tempatlahir_mhs;
+        $data_mhs->tanggallahir_mhs = $request->tanggallahir_mhs;
+        $data_mhs->jumlah_semaktif = $request->jumlah_semaktif;
+        $data_mhs->kode_prodi = $request->kode_prodi;
+        $data_mhs->nama_prodi = $request->nama_prodi;
+
+       /*  if ($request->hasFile('image_akreditasi')) {
+            // Hapus gambar sebelumnya jika diganti
+            if ($akreditasi->image_akreditasi) {
+                $existingImagePath = public_path('images/akreditasi/' . $akreditasi->image_akreditasi);
+                if (file_exists($existingImagePath)) {
+                    unlink($existingImagePath);
+                }
+            }
+
+            $imageName = str_replace(' ', '', $request->prodi) . '_image_akreditasi_'. date('YmdHis') . '.' . $request->file('image_akreditasi')->extension();
+            $request->file('image_akreditasi')->move(public_path('images/akreditasi'), $imageName);
+            $akreditasi->image_akreditasi = $imageName;
+        } */
+
+        if ($data_mhs->save()) {
+            return redirect()->route('data_mhs.index')->with('message', 'Data Mahasiswa Berhasil Diedit.');
+        } else {
+            return redirect()->back()->with('error', 'Gagal Edit Data Mahasiswa.');
+        }
+        return redirect()->route('data_mhs.index');
         //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(data_mhs $data_mhs)
+    public function destroy($id)
     {
+        $data_mhs = data_mhs::find($id);
+        if (!$data_mhs) {
+            return redirect()->back()->with('error', 'Data Mahasiswa tidak ditemukan');
+        }
+        /* if ($akreditasi->image_akreditasi) {
+            $existingImagePath = public_path('images/akreditasi/' . $akreditasi->image_akreditasi);
+            if (file_exists($existingImagePath)) {
+                unlink($existingImagePath);
+            }
+        } */
+        if ($data_mhs->delete()) {
+            return redirect()->route('data_mhs.index')->with('message', 'Data Mahasiswa Berhasil Disimpan.');
+        } else {
+            return redirect()->back()->with('error', 'Gagal Menyimpan Data Mahasiswa.');
+        }
+        return redirect()->route('data_mhs.index');
         //
     }
 }

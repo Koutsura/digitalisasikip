@@ -24,7 +24,12 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/hakakses/update/{id}', [App\Http\Controllers\HakaksesController::class, 'update'])->name('hakakses.update')->middleware('superadmin');
     Route::delete('/hakakses/delete/{id}', [App\Http\Controllers\HakaksesController::class, 'destroy'])->name('hakakses.delete')->middleware('superadmin');
 
-
+    Route::get('/data_mhs', [App\Http\Controllers\DataMhsController::class, 'index'])->name('data_mhs.index');
+    Route::get('/data_mhs/create', [App\Http\Controllers\DataMhsController::class, 'create'])->name('data_mhs.create');
+    Route::post('/data_mhs/store', [App\Http\Controllers\DataMhsController::class, 'store'])->name('data_mhs.store');
+    Route::get('/data_mhs/edit/{id}', [App\Http\Controllers\DataMhsController::class, 'edit'])->name('data_mhs.edit');
+    Route::put('/data_mhs/update/{id}', [App\Http\Controllers\DataMhsController::class, 'update'])->name('data_mhs.update');
+    Route::delete('/data_mhs/delete/{id}', [App\Http\Controllers\DataMhsController::class, 'destroy'])->name('data_mhs.delete');
 
 
 });
