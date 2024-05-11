@@ -36,7 +36,7 @@ class DataMhsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        /* $request->validate([
         'nim_mhs' => 'required|string|max:100',
         'nama_mhs' => 'required|string|max:100',
         'tempatlahir_mhs' => 'required|string|max:100',
@@ -45,7 +45,7 @@ class DataMhsController extends Controller
         'jumlah_semcuti' => 'required|string|max:10000',
         'kode_prodi' => 'required|string|max:100',
         'nama_prodi' => 'required|string|max:100',
-         ]);
+         ]); */
 
         $data_mhs = new data_mhs();
         $data_mhs->nim_mhs = $request->nim_mhs;
@@ -94,7 +94,7 @@ class DataMhsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        /* $request->validate([
             'nim_mhs' => 'required|string|max:100',
             'nama_mhs' => 'required|string|max:100',
             'tempatlahir_mhs' => 'required|string|max:100',
@@ -103,7 +103,7 @@ class DataMhsController extends Controller
             'jumlah_semcuti' => 'required|string|max:10000',
             'kode_prodi' => 'required|string|max:100',
             'nama_prodi' => 'required|string|max:100',
-        ]);
+        ]); */
 
         $data_mhs = data_mhs::find($id);
         if (!$data_mhs) {

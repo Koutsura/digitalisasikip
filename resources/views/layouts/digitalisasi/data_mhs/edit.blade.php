@@ -32,8 +32,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Tanggallahir_mhs">Tanggal Lahir</label>
-                    <input type="date" name="Tanggallahir_mhs" id="Tanggallahir_mhs" class="form-control" value="{{ $data_mhs->Tanggallahir_mhs }}" maxlength="100">
+                    <label for="tanggallahir_mhs">Tanggal Lahir</label>
+                    <input type="date" name="tanggallahir_mhs" id="tanggallahir_mhs" class="form-control" value="{{ $data_mhs->tanggallahir_mhs }}">
                 </div>
 
                 <div class="form-group">
