@@ -31,5 +31,12 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/data_mhs/update/{id}', [App\Http\Controllers\DataMhsController::class, 'update'])->name('data_mhs.update');
     Route::delete('/data_mhs/delete/{id}', [App\Http\Controllers\DataMhsController::class, 'destroy'])->name('data_mhs.delete');
 
+    Route::get('/data_prodi', [App\Http\Controllers\DataProdiController::class, 'index'])->name('data_prodi.index');
+    Route::get('/data_prodi/create', [App\Http\Controllers\DataProdiController::class, 'create'])->name('data_prodi.create');
+    Route::post('/data_prodi/store', [App\Http\Controllers\DataProdiController::class, 'store'])->name('data_prodi.store');
+    Route::get('/data_prodi/edit/{id}', [App\Http\Controllers\DataProdiController::class, 'edit'])->name('data_prodi.edit');
+    Route::put('/data_prodi/update/{id}', [App\Http\Controllers\DataProdiController::class, 'update'])->name('data_prodi.update');
+    Route::delete('/data_prodi/delete/{id}', [App\Http\Controllers\DataProdiController::class, 'destroy'])->name('data_prodi.delete');
+
 
 });
