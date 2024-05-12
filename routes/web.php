@@ -38,5 +38,12 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/data_prodi/update/{id}', [App\Http\Controllers\DataProdiController::class, 'update'])->name('data_prodi.update');
     Route::delete('/data_prodi/delete/{id}', [App\Http\Controllers\DataProdiController::class, 'destroy'])->name('data_prodi.delete');
 
+    Route::get('/data_pt', [App\Http\Controllers\DataPtController::class, 'index'])->name('data_pt.index');
+    Route::get('/data_pt/create', [App\Http\Controllers\DataPtController::class, 'create'])->name('data_pt.create');
+    Route::post('/data_pt/store', [App\Http\Controllers\DataPtController::class, 'store'])->name('data_pt.store');
+    Route::get('/data_pt/edit/{id}', [App\Http\Controllers\DataPtController::class, 'edit'])->name('data_pt.edit');
+    Route::put('/data_pt/update/{id}', [App\Http\Controllers\DataPtController::class, 'update'])->name('data_pt.update');
+    Route::delete('/data_pt/delete/{id}', [App\Http\Controllers\DataPtController::class, 'destroy'])->name('data_pt.delete');
+
 
 });
