@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Select2Controller;
 
 Route::get('/', function () {
     return view('welcome');
@@ -44,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/data_pt/edit/{id}', [App\Http\Controllers\DataPtController::class, 'edit'])->name('data_pt.edit');
     Route::put('/data_pt/update/{id}', [App\Http\Controllers\DataPtController::class, 'update'])->name('data_pt.update');
     Route::delete('/data_pt/delete/{id}', [App\Http\Controllers\DataPtController::class, 'destroy'])->name('data_pt.delete');
+
 
 
 });
