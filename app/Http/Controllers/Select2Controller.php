@@ -10,9 +10,17 @@ class Select2Controller extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-    
+        $search = $request->get('search');
+        if ($search) {
+            $data['select2'] = select2::where('tempatlahir_mhs', 'like', "%{$search}%")->get();
+        } else {
+            $data['select2'] = select2::all();
+        }
+        return view('layouts.digitalisasi.data_mhs.index', $data);
+
+
         //
     }
 

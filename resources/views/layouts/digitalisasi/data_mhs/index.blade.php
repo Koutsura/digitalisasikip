@@ -51,7 +51,7 @@
 
                                 <div class="form-group">
                                     <label>Pilih Tempat Lahir Mahasiswa</label>
-                                    <select id="kota" name="kota" class="form-control">
+                                    <select id="kota" name="search" class="form-control">
                                         <option value=""></option>
                                         <option value="Palembang">Palembang</option>
                                         <option value="Lampung">Lampung</option>
