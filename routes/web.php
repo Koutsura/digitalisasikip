@@ -32,19 +32,19 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/data_mhs/update/{id}', [App\Http\Controllers\DataMhsController::class, 'update'])->name('data_mhs.update')->middleware('operatorpt');
     Route::delete('/data_mhs/delete/{id}', [App\Http\Controllers\DataMhsController::class, 'destroy'])->name('data_mhs.delete')->middleware('operatorpt');
 
-    Route::get('/data_prodi', [App\Http\Controllers\DataProdiController::class, 'index'])->name('data_prodi.index');
-    Route::get('/data_prodi/create', [App\Http\Controllers\DataProdiController::class, 'create'])->name('data_prodi.create');
-    Route::post('/data_prodi/store', [App\Http\Controllers\DataProdiController::class, 'store'])->name('data_prodi.store');
-    Route::get('/data_prodi/edit/{id}', [App\Http\Controllers\DataProdiController::class, 'edit'])->name('data_prodi.edit');
-    Route::put('/data_prodi/update/{id}', [App\Http\Controllers\DataProdiController::class, 'update'])->name('data_prodi.update');
-    Route::delete('/data_prodi/delete/{id}', [App\Http\Controllers\DataProdiController::class, 'destroy'])->name('data_prodi.delete');
+    Route::get('/data_prodi', [App\Http\Controllers\DataProdiController::class, 'index'])->name('data_prodi.index')->middleware('superadmin');
+    Route::get('/data_prodi/create', [App\Http\Controllers\DataProdiController::class, 'create'])->name('data_prodi.create')->middleware('superadmin');
+    Route::post('/data_prodi/store', [App\Http\Controllers\DataProdiController::class, 'store'])->name('data_prodi.store')->middleware('superadmin');
+    Route::get('/data_prodi/edit/{id}', [App\Http\Controllers\DataProdiController::class, 'edit'])->name('data_prodi.edit')->middleware('superadmin');
+    Route::put('/data_prodi/update/{id}', [App\Http\Controllers\DataProdiController::class, 'update'])->name('data_prodi.update')->middleware('superadmin');
+    Route::delete('/data_prodi/delete/{id}', [App\Http\Controllers\DataProdiController::class, 'destroy'])->name('data_prodi.delete')->middleware('superadmin');
 
-    Route::get('/data_pt', [App\Http\Controllers\DataPtController::class, 'index'])->name('data_pt.index');
-    Route::get('/data_pt/create', [App\Http\Controllers\DataPtController::class, 'create'])->name('data_pt.create');
-    Route::post('/data_pt/store', [App\Http\Controllers\DataPtController::class, 'store'])->name('data_pt.store');
-    Route::get('/data_pt/edit/{id}', [App\Http\Controllers\DataPtController::class, 'edit'])->name('data_pt.edit');
-    Route::put('/data_pt/update/{id}', [App\Http\Controllers\DataPtController::class, 'update'])->name('data_pt.update');
-    Route::delete('/data_pt/delete/{id}', [App\Http\Controllers\DataPtController::class, 'destroy'])->name('data_pt.delete');
+    Route::get('/data_pt', [App\Http\Controllers\DataPtController::class, 'index'])->name('data_pt.index')->middleware('superadmin');
+    Route::get('/data_pt/create', [App\Http\Controllers\DataPtController::class, 'create'])->name('data_pt.create')->middleware('superadmin');
+    Route::post('/data_pt/store', [App\Http\Controllers\DataPtController::class, 'store'])->name('data_pt.store')->middleware('superadmin');
+    Route::get('/data_pt/edit/{id}', [App\Http\Controllers\DataPtController::class, 'edit'])->name('data_pt.edit')->middleware('superadmin');
+    Route::put('/data_pt/update/{id}', [App\Http\Controllers\DataPtController::class, 'update'])->name('data_pt.update')->middleware('superadmin');
+    Route::delete('/data_pt/delete/{id}', [App\Http\Controllers\DataPtController::class, 'destroy'])->name('data_pt.delete')->middleware('superadmin');
 
 
 
