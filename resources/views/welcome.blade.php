@@ -137,7 +137,7 @@
         membantu asa para siswa yang memiliki keterbatasan ekonomi tetapi
         berprestasi untuk melanjutkan studi di perguruan tinggi.
     </div>
-    <img class="_1-2" src="{{ asset('_1-20.png') }}" alt="Image" />
+    <img class="_1-2" src="{{ asset('img/gambar kanan.png') }}" alt="Image" />
 
     @if (Route::has('login'))
         @auth
@@ -148,7 +148,7 @@
         @endauth
     @endif
 
-    <img class="whats-app-image-2024-03-06-at-14-23" src="{{ asset('whats-app-image-2024-03-06-at-14-230.png') }}" alt="WhatsApp Image" />
-    <img class="logo-kampus-merdeka-kemendikbud-1" src="{{ asset('logo-kampus-merdeka-kemendikbud-10.png') }}" alt="Logo Kampus Merdeka" />
+    <img class="whats-app-image-2024-03-06-at-14-23" src="{{ asset('img/logo.png') }}" alt="WhatsApp Image" />
+    <img class="logo-kampus-merdeka-kemendikbud-1" src="{{ asset('img/Logo_Kampus_Merdeka_Kemendikbud.png') }}" alt="Logo Kampus Merdeka" />
 </div>
 @endsection
