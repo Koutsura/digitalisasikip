@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Data Mahasiswa')
+@section('title', 'Data Mahasiswa Eligible')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -31,7 +31,6 @@
         <!-- cdn bootstrap4 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
             integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">  --}}
-
 
             <div class="section-body">
                 <div class="table-responsive">
@@ -85,9 +84,7 @@
                                 <th>jumlah semester Cuti</th>
                                 <th>Kode Prodi</th>
                                 <th>Nama Prodi</th>
-                                @if (auth()->user()->role == 'data_mhs' || auth()->user()->role == 'superadmin')
                                 <th>Action</th>
-                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -102,9 +99,7 @@
                                     <td>{{ $item->kode_prodi }}</td>
                                     <td>{{ $item->nama_prodi }}</td>
 
-                                    @if (auth()->user()->role == 'data_mhs' || auth()->user()->role == 'superadmin')
                                     <td>
-
                                         <a href="{{ route('data_mhs.edit', $item->nim_mhs) }}" class="btn btn-primary">Edit</a>
                                         <form action="{{ route('data_mhs.delete', $item->nim_mhs) }}" method="POST" style="display: inline-block;">
                                             @csrf
@@ -112,17 +107,12 @@
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td> <!-- Add Edit and Delete buttons for each row -->
-                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-           
-
-
-
         </section>
     </div>
 @endsection

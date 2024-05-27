@@ -7,6 +7,7 @@
 @endpush
 
 @section('content')
+@if (auth()->user()->role == 'operatorpt')
 <div class="main-content">
     <section class="section">
         <div class="section-header">
@@ -30,7 +31,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Batch 1</h5>
                             <p class="card-text">Deskripsi atau informasi tambahan tentang Batch 1.</p>
-                            <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                            <a href="data_mhs" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -81,6 +82,30 @@
                 </div>
             </div>
         </div>
+        @endif
+
+        @if (auth()->user()->role == 'superadmin')
+
+            <div class="main-content">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">{{ __('Dashboard') }}</div>
+
+                            <div class="card-body">
+                                @if (session('status'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
+
+                                {{ __('You are logged in!') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
     </section>
 </div>
 @endsection
