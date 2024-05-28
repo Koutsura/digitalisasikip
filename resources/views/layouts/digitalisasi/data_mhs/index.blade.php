@@ -37,7 +37,9 @@
                 <div class="table-responsive">
                     <div class="row mb-3">
                         <div class="col-md-6">
+                            @if (auth()->user()->role == 'data_mhs' || auth()->user()->role == 'superadmin')
                             <a href="{{ route('data_mhs.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
+                            @endif
                             <form action="{{ route('data_mhs.index') }}" method="GET">
                                 <div class="input-group">
                                     <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Nama Mahasiswa...">
@@ -119,7 +121,7 @@
                     </table>
                 </div>
             </div>
-           
+
 
 
 
