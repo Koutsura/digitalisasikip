@@ -40,24 +40,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Pilih Kode Prodi</label>
-                        <select id="kota" name="kota" class="form-control">
-                            <option value=""></option>
-                            <option value="Palembang">Palembang</option>
-                            <option value="Lampung">Lampung</option>
-                            <option value="Bengkulu">Bengkulu</option>
-                            <option value="Jambi">Jambi</option>
-                            <option value="Indralaya">Indralaya</option>
-                            <option value="Prabumulih">Prabumulih</option>
-                            <option value="MuaraEnim">MuaraEnim</option>
-                            <option value="Lahat">Lahat</option>
-                            <option value="PagarAlam">PagarAlam</option>
-                        </select>
-                        <div class="input-group-append">
-                            <button class="btn btn-primary ml-auto" type="submit">Search</button>
-                        </div>
-                    </div>
+                    
 
                     <table class="table table-bordered">
                         <thead>
