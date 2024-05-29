@@ -15,16 +15,6 @@
         </div>
 
         <div class="section-body">
-            <div class="row mb-4">
-                <div class="col">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Cari Batch...">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">Cari</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
@@ -76,6 +66,33 @@
                         <div class="card-body">
                             <h5 class="card-title">Batch 6</h5>
                             <p class="card-text">Deskripsi atau informasi tambahan tentang Batch 6.</p>
+                            <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Batch 7</h5>
+                            <p class="card-text">Deskripsi atau informasi tambahan tentang Batch 7.</p>
+                            <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Batch 8</h5>
+                            <p class="card-text">Deskripsi atau informasi tambahan tentang Batch 8.</p>
+                            <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Batch 9</h5>
+                            <p class="card-text">Deskripsi atau informasi tambahan tentang Batch 9.</p>
                             <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
