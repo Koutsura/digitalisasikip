@@ -46,6 +46,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/data_pt/update/{id}', [App\Http\Controllers\DataPtController::class, 'update'])->name('data_pt.update')->middleware('superadmin');
     Route::delete('/data_pt/delete/{id}', [App\Http\Controllers\DataPtController::class, 'destroy'])->name('data_pt.delete')->middleware('superadmin');
 
-
+    Route::get('/select2', [App\Http\Controllers\Select2Controller::class, 'index'])->name('select2.index');
 
 });

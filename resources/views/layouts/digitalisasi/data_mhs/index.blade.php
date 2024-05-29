@@ -51,10 +51,10 @@
                         </div>
                     </div>
 
-
+                    <form action="{{ route('data_mhs.index') }}" method="GET">
                                 <div class="form-group">
                                     <label>Pilih Tempat Lahir Mahasiswa</label>
-                                    <select id="kota" name="search" class="form-control">
+                                    <select id="tempatlahir_mhs" name="search" class="form-control">
                                         <option value=""></option>
                                         <option value="Palembang">Palembang</option>
                                         <option value="Lampung">Lampung</option>
@@ -62,7 +62,7 @@
                                         <option value="Jambi">Jambi</option>
                                         <option value="Indralaya">Indralaya</option>
                                         <option value="Prabumulih">Prabumulih</option>
-                                        <option value="MuaraEnim">MuaraEnim</option>
+                                        <option value="Muara Enim">Muara Enim</option>
                                         <option value="Lahat">Lahat</option>
                                         <option value="PagarAlam">PagarAlam</option>
                                     </select>

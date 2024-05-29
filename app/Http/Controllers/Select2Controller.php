@@ -10,18 +10,32 @@ class Select2Controller extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function select2(Request $request)
     {
-        $search = $request->get('search');
-        if ($search) {
-            $data['select2'] = select2::where('tempatlahir_mhs', 'like', "%{$search}%")->get();
+        $search = $request->search;
+
+        if (empty($search)) {
+            $tempatLahir = select2::select('tempatlahir_mhs')
+                ->distinct()
+                ->limit(10)
+                ->get();
         } else {
-            $data['select2'] = select2::all();
+            $tempatLahir = select2::select('tempatlahir_mhs')
+                ->where('tempatlahir_mhs', 'like', '%' . $search . '%')
+                ->distinct()
+                ->limit(10)
+                ->get();
         }
-        return view('layouts.digitalisasi.data_mhs.index', $data);
 
+        $response = array();
+        foreach ($tempatLahir as $tempat) {
+            $response[] = array(
+                "id" => $tempat->tempatlahir_mhs,
+                "text" => $tempat->tempatlahir_mhs
+            );
+        }
 
-        //
+        return response()->json($response);
     }
 
     /**

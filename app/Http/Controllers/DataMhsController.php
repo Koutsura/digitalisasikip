@@ -15,7 +15,11 @@ class DataMhsController extends Controller
         $search = $request->get('search');
         if ($search) {
             $data['data_mhs'] = data_mhs::where('nama_mhs', 'like', "%{$search}%")->get();
-        } else {
+        }
+        if ($search) {
+            $data['data_mhs'] = data_mhs::where('tempatlahir_mhs', 'like', "%{$search}%")->get();
+        }
+        else {
             $data['data_mhs'] = data_mhs::all();
         }
         return view('layouts.digitalisasi.data_mhs.index', $data);
