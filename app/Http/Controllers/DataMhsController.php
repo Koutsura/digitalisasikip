@@ -13,16 +13,24 @@ class DataMhsController extends Controller
     public function index(Request $request)
     {
         $search = $request->get('search');
-        if ($search) {
-            $data['data_mhs'] = data_mhs::where('nama_mhs', 'like', "%{$search}%")->get();
-        }
-        if ($search) {
-            $data['data_mhs'] = data_mhs::where('tempatlahir_mhs', 'like', "%{$search}%")->get();
-        }
-        else {
-            $data['data_mhs'] = data_mhs::all();
-        }
-        return view('layouts.digitalisasi.data_mhs.index', $data);
+$query = data_mhs::query();
+
+if ($search) {
+    // Jika ada pencarian, tambahkan kondisi untuk nama_mhs
+    $query->where('nama_mhs', 'like', "%{$search}%");
+}
+
+if ($search) {
+    // Jika ada pencarian, tambahkan kondisi untuk tempatlahir_mhs
+    $query->orWhere('tempatlahir_mhs', 'like', "%{$search}%");
+}
+
+// Dapatkan hasil query
+$data['data_mhs'] = $query->get();
+
+return view('layouts.digitalisasi.data_mhs.index', $data);
+
+
         //
     }
 
