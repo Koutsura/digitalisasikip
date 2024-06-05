@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Batch 1</h5>
                             <p class="card-text">Deskripsi atau informasi tambahan tentang Batch 1.</p>
-                            <a href="data_mhs" class="btn btn-primary">Lihat Selengkapnya</a>
+                            <a href="peserta" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
