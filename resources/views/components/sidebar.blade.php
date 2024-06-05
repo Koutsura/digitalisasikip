@@ -33,10 +33,10 @@
             <li class="{{ Request::is('profile/ganti-password') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('profile/ganti-password') }}"><i class="fas fa-key"></i> <span>Ganti Password</span></a>
             </li>
-            @if (auth()->user()->role == 'data_mhs' || auth()->user()->role == 'superadmin')
+            @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
             <li class="menu-header">Pages</li>
-            <li class="{{ Request::is('data_mhs') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('data_mhs') }}"><i class="fas fa-newspaper"></i> <span>Data Mahasiswa</span></a>
+            <li class="{{ Request::is('peserta') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('peserta') }}"><i class="fas fa-newspaper"></i> <span>Data Mahasiswa</span></a>
             </li>
              @endif
              @if (auth()->user()->role == 'data_prodi' || auth()->user()->role == 'superadmin')

@@ -57,4 +57,12 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/perguruan_tinggi/update/{id}', [App\Http\Controllers\PerguruanTinggiController::class, 'update'])->name('perguruan_tinggi.update')->middleware('superadmin');
     Route::delete('/perguruan_tinggi/delete/{id}', [App\Http\Controllers\PerguruanTinggiController::class, 'destroy'])->name('perguruan_tinggi.delete')->middleware('superadmin');
 
+    Route::get('/peserta/import', [App\Http\Controllers\PesertaController::class, 'import'])->name('peserta.import');
+    Route::post('/peserta/import', [App\Http\Controllers\PesertaController::class, 'import_post']);
+    Route::get('/peserta', [App\Http\Controllers\PesertaController::class, 'index'])->name('peserta.index');
+    Route::get('/peserta/create', [App\Http\Controllers\PesertaController::class, 'create'])->name('peserta.create');
+    Route::post('/peserta/store', [App\Http\Controllers\PesertaController::class, 'store'])->name('peserta.store');
+    Route::get('/peserta/edit/{id}', [App\Http\Controllers\PesertaController::class, 'edit'])->name('peserta.edit');
+    Route::put('/peserta/update/{id}', [App\Http\Controllers\PesertaController::class, 'update'])->name('peserta.update');
+    Route::delete('/peserta/delete/{id}', [App\Http\Controllers\PesertaController::class, 'destroy'])->name('peserta.delete');
 });

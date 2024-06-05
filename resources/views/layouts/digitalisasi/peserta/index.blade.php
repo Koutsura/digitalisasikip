@@ -37,13 +37,13 @@
                 <div class="table-responsive">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            @if (auth()->user()->role == 'data_mhs' || auth()->user()->role == 'superadmin')
-                            <a href="{{ route('data_mhs.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
-                            <a href="{{ route('data_mhs.import') }}" class="btn btn-primary mb-3">Import Data</a>
+                            @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
+                            <a href="{{ route('peserta.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
+                            <a href="{{ route('peserta.import') }}" class="btn btn-primary mb-3">Import Data</a>
                             @endif
-                            <form action="{{ route('data_mhs.index') }}" method="GET">
+                            <form action="{{ route('peserta.index') }}" method="GET">
                                 <div class="input-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Nama Mahasiswa...">
+                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan NIK Mahasiswa...">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" style="margin-left:5px;" type="submit">Search</button>
                                     </div>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
 
-                    <form action="{{ route('data_mhs.index') }}" method="GET">
+                    <form action="{{ route('peserta.index') }}" method="GET">
                                 <div class="form-group">
                                     <label>Pilih Tempat Lahir Mahasiswa</label>
                                     <select id="tempatlahir_mhs" name="search" class="form-control">
@@ -80,36 +80,93 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Nim Mahasiswa</th>
-                                <th>Nama Mahasiswa</th>
-                                <th>Tempat Lahir</th>
-                                <th>Tanggal Lahir</th>
-                                <th>jumlah semester aktif</th>
-                                <th>jumlah semester Cuti</th>
-                                <th>Kode Prodi</th>
-                                <th>Nama Prodi</th>
-                                @if (auth()->user()->role == 'data_mhs' || auth()->user()->role == 'superadmin')
+                                <th>nik</th>
+                                <th>no_pendaftaran</th>
+                                <th>nisn</th>
+                                <th>npsn</th>
+                                <th>email</th>
+                                <th>nim</th>
+                                <th>no_kk</th>
+                                <th>nama_mahasiswa</th>
+                                <th> tempat_lahir</th>
+                                <th>tanggal_lahir</th>
+                                <th>jenis_kelamin</th>
+                                <th> alamat</th>
+                                <th> no_hp</th>
+                                <th>no_kip</th>
+                                <th>no_kks</th>
+                                <th> asal_sekolah</th>
+                                <th> kab_kota_sekolah</th>
+                                <th> prov_sekolah</th>
+                                <th>nama_ayah</th>
+                                <th>pekerjaan_ayah</th>
+                                <th> penghasilan_ayah</th>
+                                <th>status_ayah</th>
+                                <th> nama_ibu</th>
+                                <th>pekerjaan_ibu</th>
+                                <th> penghasilan_ibu</th>
+                                <th> status_ibu</th>
+                                <th>jumlah_tanggungan</th>
+                                <th>kepemilikan_rumah</th>
+                                <th>tahun_perolehan_rumah</th>
+                                <th>sumber_listrik</th>
+                                <th>luas_tanah</th>
+                                <th>luas_bangunan</th>
+                                <th>sumber_air</th>
+                                <th>mck</th>
+                                <th>jarak_pusat_kota_km</th>
+
+                                @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
                                 <th>Action</th>
                                 @endif
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data_mhs as $item)
+                            @foreach ($peserta as $item)
                                 <tr>
-                                    <td>{{ $item->nim_mhs }}</td>
-                                    <td>{{ $item->nama_mhs }}</td>
-                                    <td>{{ $item->tempatlahir_mhs }}</td>
-                                    <td>{{ $item->tanggallahir_mhs }}</td>
-                                    <td>{{ $item->jumlah_semaktif }}</td>
-                                    <td>{{ $item->jumlah_semcuti }}</td>
-                                    <td>{{ $item->kode_prodi }}</td>
-                                    <td>{{ $item->nama_prodi }}</td>
 
-                                    @if (auth()->user()->role == 'data_mhs' || auth()->user()->role == 'superadmin')
+<td>{{ $item->nik }}</td>
+<td>{{ $item->no_pendaftaran }}</td>
+<td>{{ $item->nisn }}</td>
+<td>{{ $item->npsn }}</td>
+<td>{{ $item->email }}</td>
+<td>{{ $item->nim }}</td>
+<td>{{ $item->no_kk }}</td>
+<td>{{ $item->nama_mahasiswa }}</td>
+<td>{{ $item->tempat_lahir }}</td>
+<td>{{ $item->tanggal_lahir }}</td>
+<td>{{ $item->jenis_kelamin }}</td>
+<td>{{ $item->alamat }}</td>
+<td>{{ $item->no_hp }}</td>
+<td>{{ $item->no_kip }}</td>
+<td>{{ $item->no_kks }}</td>
+<td>{{ $item->asal_sekolah }}</td>
+<td>{{ $item->kab_kota_sekolah }}</td>
+<td>{{ $item->prov_sekolah }}</td>
+<td>{{ $item->nama_ayah }}</td>
+<td>{{ $item->pekerjaan_ayah }}</td>
+<td>{{ $item->penghasilan_ayah }}</td>
+<td>{{ $item->status_ayah }}</td>
+<td>{{ $item->nama_ibu }}</td>
+<td>{{ $item->pekerjaan_ibu }}</td>
+<td>{{ $item->penghasilan_ibu }}</td>
+<td>{{ $item->status_ibu }}</td>
+<td>{{ $item->jumlah_tanggungan }}</td>
+<td>{{ $item->kepemilikan_rumah }}</td>
+<td>{{ $item->tahun_perolehan_rumah }}</td>
+<td>{{ $item->sumber_listrik }}</td>
+<td>{{ $item->luas_tanah }}</td>
+<td>{{ $item->luas_bangunan }}</td>
+<td>{{ $item->sumber_air }}</td>
+<td>{{ $item->mck }}</td>
+<td>{{ $item->jarak_pusat_kota_km }}</td>
+
+
+                                    @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
                                     <td>
 
-                                        <a href="{{ route('data_mhs.edit', $item->nim_mhs) }}" class="btn btn-primary">Edit</a>
-                                        <form action="{{ route('data_mhs.delete', $item->nim_mhs) }}" method="POST" style="display: inline-block;">
+                                        <a href="{{ route('peserta.edit', $item->nik) }}" class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('peserta.delete', $item->nik) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
