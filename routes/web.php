@@ -27,6 +27,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/data_mhs', [App\Http\Controllers\DataMhsController::class, 'index'])->name('data_mhs.index');
     Route::get('/data_mhs/create', [App\Http\Controllers\DataMhsController::class, 'create'])->name('data_mhs.create');
+    Route::get('/data_mhs/import', [App\Http\Controllers\DataMhsController::class, 'import'])->name('data_mhs.import');
+    Route::post('/data_mhs/import', [App\Http\Controllers\DataMhsController::class, 'import_post']);
     Route::post('/data_mhs/store', [App\Http\Controllers\DataMhsController::class, 'store'])->name('data_mhs.store');
     Route::get('/data_mhs/edit/{id}', [App\Http\Controllers\DataMhsController::class, 'edit'])->name('data_mhs.edit');
     Route::put('/data_mhs/update/{id}', [App\Http\Controllers\DataMhsController::class, 'update'])->name('data_mhs.update');

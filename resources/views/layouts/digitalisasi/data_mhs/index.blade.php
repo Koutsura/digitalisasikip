@@ -39,6 +39,7 @@
                         <div class="col-md-6">
                             @if (auth()->user()->role == 'data_mhs' || auth()->user()->role == 'superadmin')
                             <a href="{{ route('data_mhs.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
+                            <a href="{{ route('data_mhs.import') }}" class="btn btn-primary mb-3">Import Data</a>
                             @endif
                             <form action="{{ route('data_mhs.index') }}" method="GET">
                                 <div class="input-group">

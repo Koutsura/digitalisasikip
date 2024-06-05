@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\data_mhs;
+use App\Imports\dataMhsImport;
 use Illuminate\Http\Request;
+use Excel;
 
 class DataMhsController extends Controller
 {
@@ -41,6 +43,18 @@ return view('layouts.digitalisasi.data_mhs.index', $data);
     {
         return view('layouts.digitalisasi.data_mhs.create');
         //
+    }
+
+    public function import()
+    {
+        return view('layouts.digitalisasi.data_mhs.import');
+        //
+    }
+
+    public function import_post(Request $request)
+    {
+        // dd($request->all());
+        Excel::import(new dataMhsImport, $request->file('excel_file'));
     }
 
     /**
