@@ -44,9 +44,9 @@
                 <a class="nav-link" href="{{ url('data_prodi') }}"><i class="fas fa-university"></i> <span>Data Prodi</span></a>
             </li>
              @endif
-             @if (auth()->user()->role == 'data_pt' || auth()->user()->role == 'superadmin')
-            <li class="{{ Request::is('data_pt') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('data_pt') }}"><i class="fas fa-university"></i> <span>Data Perguruan Tinggi</span></a>
+             @if (auth()->user()->role == 'perguruan_tinggi' || auth()->user()->role == 'superadmin')
+            <li class="{{ Request::is('perguruan_tinggi') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('perguruan_tinggi') }}"><i class="fas fa-university"></i> <span>Data Perguruan Tinggi</span></a>
             </li>
              @endif
 

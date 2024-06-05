@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Data PT')
+@section('title', 'Data Perguruan Tinggi')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -28,10 +28,10 @@
                 <div class="table-responsive">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <a href="{{ route('data_pt.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
-                            <form action="{{ route('data_pt.index') }}" method="GET">
+                            <a href="{{ route('perguruan_tinggi.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
+                            <form action="{{ route('perguruan_tinggi.index') }}" method="GET">
                                 <div class="input-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Kode PT...">
+                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Kode perguruan tinggi...">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" style="margin-left:5px;" type="submit">Search</button>
                                     </div>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
 
-                   
+
 
                     <table class="table table-bordered">
                         <thead>
@@ -51,14 +51,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data_pt as $item)
+                            @foreach ($perguruan_tinggi as $item)
                                 <tr>
                                     <td>{{ $item->kode_pt }}</td>
                                     <td>{{ $item->nama_pt }}</td>
 
                                     <td>
-                                        <a href="{{ route('data_pt.edit', $item->kode_pt) }}" class="btn btn-primary">Edit</a>
-                                        <form action="{{ route('data_pt.delete', $item->kode_pt) }}" method="POST" style="display: inline-block;">
+                                        <a href="{{ route('perguruan_tinggi.edit', $item->kode_pt) }}" class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('perguruan_tinggi.delete', $item->kode_pt) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>

@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/hakakses/update/{id}', [App\Http\Controllers\HakaksesController::class, 'update'])->name('hakakses.update')->middleware('superadmin');
     Route::delete('/hakakses/delete/{id}', [App\Http\Controllers\HakaksesController::class, 'destroy'])->name('hakakses.delete')->middleware('superadmin');
 
-    Route::get('/data_mhs', [App\Http\Controllers\DataMhsController::class, 'index'])->name('data_mhs.index');
+    /* Route::get('/data_mhs', [App\Http\Controllers\DataMhsController::class, 'index'])->name('data_mhs.index');
     Route::get('/data_mhs/create', [App\Http\Controllers\DataMhsController::class, 'create'])->name('data_mhs.create');
     Route::get('/data_mhs/import', [App\Http\Controllers\DataMhsController::class, 'import'])->name('data_mhs.import');
     Route::post('/data_mhs/import', [App\Http\Controllers\DataMhsController::class, 'import_post']);
@@ -48,6 +48,13 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/data_pt/update/{id}', [App\Http\Controllers\DataPtController::class, 'update'])->name('data_pt.update')->middleware('superadmin');
     Route::delete('/data_pt/delete/{id}', [App\Http\Controllers\DataPtController::class, 'destroy'])->name('data_pt.delete')->middleware('superadmin');
 
-    Route::get('/select2', [App\Http\Controllers\Select2Controller::class, 'index'])->name('select2.index');
+    Route::get('/select2', [App\Http\Controllers\Select2Controller::class, 'index'])->name('select2.index'); */
+
+    Route::get('/perguruan_tinggi', [App\Http\Controllers\PerguruanTinggiController::class, 'index'])->name('perguruan_tinggi.index')->middleware('superadmin');
+    Route::get('/perguruan_tinggi/create', [App\Http\Controllers\PerguruanTinggiController::class, 'create'])->name('perguruan_tinggi.create')->middleware('superadmin');
+    Route::post('/perguruan_tinggi/store', [App\Http\Controllers\PerguruanTinggiController::class, 'store'])->name('perguruan_tinggi.store')->middleware('superadmin');
+    Route::get('/perguruan_tinggi/edit/{id}', [App\Http\Controllers\PerguruanTinggiController::class, 'edit'])->name('perguruan_tinggi.edit')->middleware('superadmin');
+    Route::put('/perguruan_tinggi/update/{id}', [App\Http\Controllers\PerguruanTinggiController::class, 'update'])->name('perguruan_tinggi.update')->middleware('superadmin');
+    Route::delete('/perguruan_tinggi/delete/{id}', [App\Http\Controllers\PerguruanTinggiController::class, 'destroy'])->name('perguruan_tinggi.delete')->middleware('superadmin');
 
 });

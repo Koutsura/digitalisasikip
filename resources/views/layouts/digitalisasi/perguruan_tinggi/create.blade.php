@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tambah Data PT')
+@section('title', 'Tambah Data Perguruan Tinggi')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -12,7 +12,7 @@
             <div class="section-header">
                 <h1>Tambah Data PT</h1>
             </div>
-                <form action="{{ route('data_pt.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('perguruan_tinggi.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group">
