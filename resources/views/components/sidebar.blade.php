@@ -39,14 +39,19 @@
                 <a class="nav-link" href="{{ url('peserta') }}"><i class="fas fa-newspaper"></i> <span>Data Mahasiswa</span></a>
             </li>
              @endif
-             @if (auth()->user()->role == 'data_prodi' || auth()->user()->role == 'superadmin')
-            <li class="{{ Request::is('data_prodi') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('data_prodi') }}"><i class="fas fa-university"></i> <span>Data Prodi</span></a>
+             @if (auth()->user()->role == 'program_studi' || auth()->user()->role == 'superadmin')
+            <li class="{{ Request::is('program_studi') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('program_studi') }}"><i class="fas fa-university"></i> <span>Data Prodi</span></a>
             </li>
              @endif
              @if (auth()->user()->role == 'perguruan_tinggi' || auth()->user()->role == 'superadmin')
             <li class="{{ Request::is('perguruan_tinggi') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('perguruan_tinggi') }}"><i class="fas fa-university"></i> <span>Data Perguruan Tinggi</span></a>
+            </li>
+             @endif
+             @if (auth()->user()->role == 'seleksi' || auth()->user()->role == 'superadmin')
+            <li class="{{ Request::is('seleksi') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('seleksi') }}"><i class="fas fa-university"></i> <span>Penetapan</span></a>
             </li>
              @endif
 

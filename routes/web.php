@@ -65,4 +65,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/peserta/edit/{id}', [App\Http\Controllers\PesertaController::class, 'edit'])->name('peserta.edit');
     Route::put('/peserta/update/{id}', [App\Http\Controllers\PesertaController::class, 'update'])->name('peserta.update');
     Route::delete('/peserta/delete/{id}', [App\Http\Controllers\PesertaController::class, 'destroy'])->name('peserta.delete');
+
+    Route::get('/program_studi', [App\Http\Controllers\ProgramStudiController::class, 'index'])->name('program_studi.index')->middleware('superadmin');
+    Route::get('/program_studi/create', [App\Http\Controllers\ProgramStudiController::class, 'create'])->name('program_studi.create')->middleware('superadmin');
+    Route::post('/program_studi/store', [App\Http\Controllers\ProgramStudiController::class, 'store'])->name('program_studi.store')->middleware('superadmin');
+    Route::get('/program_studi/edit/{id}', [App\Http\Controllers\ProgramStudiController::class, 'edit'])->name('program_studi.edit')->middleware('superadmin');
+    Route::put('/program_studi/update/{id}', [App\Http\Controllers\ProgramStudiController::class, 'update'])->name('program_studi.update')->middleware('superadmin');
+    Route::delete('/program_studi/delete/{id}', [App\Http\Controllers\ProgramStudiController::class, 'destroy'])->name('program_studi.delete')->middleware('superadmin');
+
+    Route::get('/seleksi', [App\Http\Controllers\SeleksiController::class, 'index'])->name('seleksi.index')->middleware('superadmin');
+    Route::get('/seleksi/create', [App\Http\Controllers\SeleksiController::class, 'create'])->name('seleksi.create')->middleware('superadmin');
+    Route::post('/seleksi/store', [App\Http\Controllers\SeleksiController::class, 'store'])->name('seleksi.store')->middleware('superadmin');
+    Route::get('/seleksi/edit/{id}', [App\Http\Controllers\SeleksiController::class, 'edit'])->name('seleksi.edit')->middleware('superadmin');
+    Route::put('/seleksi/update/{id}', [App\Http\Controllers\SeleksiController::class, 'update'])->name('seleksi.update')->middleware('superadmin');
+    Route::delete('/seleksi/delete/{id}', [App\Http\Controllers\SeleksiController::class, 'destroy'])->name('seleksi.delete')->middleware('superadmin');
 });

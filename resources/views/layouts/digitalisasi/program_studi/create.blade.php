@@ -12,7 +12,7 @@
             <div class="section-header">
                 <h1>Tambah Data Prodi</h1>
             </div>
-                <form action="{{ route('data_prodi.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('program_studi.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="kode_prodi">Kode Prodi</label>
@@ -24,12 +24,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="kode_pt">Kode Pt</label>
-                        <input type="text" name="kode_pt" id="kode_pt" class="form-control" required maxlength="100">
+                        <label for="akreditasi_prodi">Akreditasi Prodi</label>
+                        <input type="text" name="akreditasi_prodi" id="akreditasi_prodi" class="form-control" required maxlength="100">
                     </div>
                     <div class="form-group">
-                        <label for="nama_pt">Nama Pt</label>
-                        <input type="text" name="nama_pt" id="nama_pt" class="form-control" required maxlength="125">
+                        <label for="ukt_spp">UKT SPP</label>
+                        <input type="text" name="ukt_spp" id="ukt_spp" class="form-control" required maxlength="125">
                     </div>
 
                     <div class="form-group">

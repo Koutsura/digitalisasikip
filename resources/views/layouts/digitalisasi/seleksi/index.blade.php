@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Data Prodi')
+@section('title', 'Penetapan')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -10,7 +10,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Data Prodi</h1>
+                <h1>Penetapan</h1>
             </div>
 
             @if (session('message'))
@@ -28,10 +28,10 @@
                 <div class="table-responsive">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <a href="{{ route('data_prodi.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
-                            <form action="{{ route('data_prodi.index') }}" method="GET">
+                            <a href="{{ route('seleksi.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
+                            <form action="{{ route('seleksi.index') }}" method="GET">
                                 <div class="input-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Kode Prodi...">
+                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan No Pendaftaran...">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" style="margin-left:5px;" type="submit">Search</button>
                                     </div>
@@ -40,29 +40,31 @@
                         </div>
                     </div>
 
-                    
+
 
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Kode Prodi</th>
-                                <th>Nama Prodi</th>
-                                <th>Kode Pt</th>
-                                <th>Nama Pt</th>
+                                <th>no_pendaftaran</th>
+                                <th>seleksi_penetapan</th>
+                                <th>ranking_penetapan</th>
+                                <th>kategori_penetapan</th>
+                                <th>skema_bantuan_pembiayaan</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data_prodi as $item)
+                            @foreach ($seleksi as $item)
                                 <tr>
-                                    <td>{{ $item->kode_prodi }}</td>
-                                    <td>{{ $item->nama_prodi }}</td>
-                                    <td>{{ $item->kode_pt }}</td>
-                                    <td>{{ $item->nama_pt }}</td>
+                                    <td>{{ $item->no_pendaftaran }}</td>
+                                    <td>{{ $item->seleksi_penetapan }}</td>
+                                    <td>{{ $item->ranking_penetapan }}</td>
+                                    <td>{{ $item->kategori_penetapan }}</td>
+                                    <td>{{ $item->skema_bantuan_pembiayaan }}</td>
 
                                     <td>
-                                        <a href="{{ route('data_prodi.edit', $item->kode_prodi) }}" class="btn btn-primary">Edit</a>
-                                        <form action="{{ route('data_prodi.delete', $item->kode_prodi) }}" method="POST" style="display: inline-block;">
+                                        <a href="{{ route('seleksi.edit', $item->no_pendaftaran) }}" class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('seleksi.delete', $item->no_pendaftaran) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
