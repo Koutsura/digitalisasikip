@@ -15,8 +15,8 @@
                 <form action="" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="import_data" class="form-label">Upload Data Mahasiswa</label>
-                        <input class="form-control" type="file" id="import_data" required>
+                        <label for="file" class="form-label">Upload Data Mahasiswa</label>
+                        <input class="form-control" type="file" id="file" name="excel_file" required>
                     </div>
 
                     <div class="form-group">

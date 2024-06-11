@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\peserta;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\dataMhsImport;
+use Illuminate\Support\Facades\Validator;
+
+
 
 class PesertaController extends Controller
 {
@@ -51,8 +56,31 @@ return view('layouts.digitalisasi.peserta.index', $data);
 
     public function import_post(Request $request)
     {
+
         // dd($request->all());
-        Excel::import(new dataMhsImport, $request->file('excel_file'));
+        $validator = Validator::make($request->all(), [
+            'excel_file' => 'required|file|mimes:xlsx,csv,xls',
+        ], [
+            'excel_file.required' => 'The Excel file is required.',
+            'excel_file.file' => 'The uploaded file must be a valid file.',
+            'excel_file.mimes' => 'The file must be a file of type: xlsx, csv, xls.',
+        ]);
+
+        // Check if the validation fails
+        if ($validator->fails()) {
+            // Redirect back with validation errors and old input
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        // Handle the file import
+        try {
+            $file = $request->file('excel_file');
+            Excel::import(new dataMhsImport, $file, null, \Maatwebsite\Excel\Excel::XLSX);
+            return redirect()->back()->with('success', 'File imported successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'There was an error importing the file: ' . $e->getMessage());
+        }
+
     }
 
     /**

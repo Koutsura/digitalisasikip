@@ -55,7 +55,9 @@
             "dev-master": "11.x-dev"
         },
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "maatwebsite/excel"
+            ]
         }
     },
     "config": {
