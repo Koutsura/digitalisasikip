@@ -86,7 +86,7 @@ return view('layouts.digitalisasi.peserta.index', $data);
 
     public function export()
     {
-        return Excel::download(new dataMhsExport, 'users.xlsx');
+        return Excel::download(new dataMhsExport, 'Data Mahasiswa.xlsx');
     }
 
     /**
