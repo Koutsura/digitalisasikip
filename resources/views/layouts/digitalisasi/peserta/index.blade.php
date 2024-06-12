@@ -38,17 +38,17 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
-                            <a href="{{ route('peserta.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
+                            {{-- <a href="{{ route('peserta.create') }}" class="btn btn-primary mb-3">Tambah Data</a> --}}
                             <a href="{{ route('peserta.import') }}" class="btn btn-primary mb-3">Import Data</a>
                             <form action="{{ route('peserta.export') }}" method="GET">
-                                <button type="submit" class="btn btn-success">Download Excel</button>
+                                <button type="submit" class="btn btn-success">Unduh Excel</button>
                             </form>
                             @endif
                             <form action="{{ route('peserta.index') }}" method="GET">
                                 <div class="input-group">
                                     <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan NIK Mahasiswa...">
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary" style="margin-left:5px;" type="submit">Search</button>
+                                        <button class="btn btn-primary" style="margin-left:5px;" type="submit">Cari</button>
                                     </div>
                                 </div>
                             </form>
@@ -71,7 +71,7 @@
                                         <option value="PagarAlam">PagarAlam</option>
                                     </select>
                                     <div class="input-group-append">
-                                        <button class="btn btn-primary ml-auto" type="submit">Search</button>
+                                        <button class="btn btn-primary ml-auto" type="submit">Cari</button>
                                     </div>
                                 </div>
 
@@ -83,56 +83,56 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>
+                                {{-- <th>
 
-                                </th>
-                                <th>nik</th>
-                                <th>no_pendaftaran</th>
-                                <th>nisn</th>
-                                <th>npsn</th>
-                                <th>email</th>
-                                <th>nim</th>
-                                <th>no_kk</th>
-                                <th>nama_mahasiswa</th>
-                                <th> tempat_lahir</th>
-                                <th>tanggal_lahir</th>
-                                <th>jenis_kelamin</th>
-                                <th> alamat</th>
-                                <th> no_hp</th>
-                                <th>no_kip</th>
-                                <th>no_kks</th>
-                                <th> asal_sekolah</th>
-                                <th> kab_kota_sekolah</th>
-                                <th> prov_sekolah</th>
-                                <th>nama_ayah</th>
-                                <th>pekerjaan_ayah</th>
-                                <th> penghasilan_ayah</th>
-                                <th>status_ayah</th>
-                                <th> nama_ibu</th>
-                                <th>pekerjaan_ibu</th>
-                                <th> penghasilan_ibu</th>
-                                <th> status_ibu</th>
-                                <th>jumlah_tanggungan</th>
-                                <th>kepemilikan_rumah</th>
-                                <th>tahun_perolehan_rumah</th>
-                                <th>sumber_listrik</th>
-                                <th>luas_tanah</th>
-                                <th>luas_bangunan</th>
-                                <th>sumber_air</th>
-                                <th>mck</th>
-                                <th>jarak_pusat_kota_km</th>
+                                </th> --}}
+                                <th>NIK</th>
+                                <th>No Pendaftaran</th>
+                                <th>NISN</th>
+                                <th>NPSN</th>
+                                <th>Email</th>
+                                <th>NIM</th>
+                                <th>No KK</th>
+                                <th>Nama Mahasiswa</th>
+                                <th>Tempat Lahir</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Alamat</th>
+                                <th>No HP</th>
+                                <th>No KIP</th>
+                                <th>No KKS</th>
+                                <th>Asal Sekolah</th>
+                                <th>Kab/Kota Asal Sekolah</th>
+                                <th>Provinsi Asal Sekolah</th>
+                                <th>Nama Ayah</th>
+                                <th>Pekerjaan Ayah</th>
+                                <th>Penghasilan Ayah</th>
+                                <th>Status Ayah</th>
+                                <th>Nama Ibu</th>
+                                <th>Pekerjaan Ibu</th>
+                                <th>Penghasilan Ibu</th>
+                                <th>Status Ibu</th>
+                                <th>Jumlah Tanggungan</th>
+                                <th>Kepemilikan Rumah</th>
+                                <th>Tahun Perolehan Rumah</th>
+                                <th>Sumber Listrik</th>
+                                <th>Luas Tanah</th>
+                                <th>Luas Bangunan</th>
+                                <th>Sumber Air</th>
+                                <th>MCK</th>
+                                <th>Jarak Pusat Kota (km)</th>
 
                                 @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
-                                <th>Action</th>
+                                <th>Aksi</th>
                                 @endif
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($peserta as $item)
                                 <tr>
-                                    <td>
+                                    {{-- <td>
                                         <input type="checkbox" class="select_item" value="{{ $item->nik }}">
-                                    </td>
+                                    </td> --}}
 
 <td>{{ $item->nik }}</td>
 <td>{{ $item->no_pendaftaran }}</td>
@@ -178,7 +178,7 @@
                                         <form action="{{ route('peserta.delete', $item->nik) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            <button type="submit" class="btn btn-danger">Hapus</button>
                                         </form>
                                     </td> <!-- Add Edit and Delete buttons for each row -->
                                     @endif
