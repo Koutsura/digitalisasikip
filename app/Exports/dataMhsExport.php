@@ -56,8 +56,8 @@ $peserta->luas_bangunan ,
 $peserta->sumber_air ,
 $peserta->mck ,
 $peserta->jarak_pusat_kota_km ,
-$peserta->created_at,
-$peserta->updated_at,
+// $peserta->created_at,
+// $peserta->updated_at,
 
 
 ];
