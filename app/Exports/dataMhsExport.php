@@ -68,6 +68,7 @@ $peserta->updated_at,
     public function headings(): array
     {
         return [
+            'Nik',
             'No Pendaftaran',
             'NISN',
             'NPSN',

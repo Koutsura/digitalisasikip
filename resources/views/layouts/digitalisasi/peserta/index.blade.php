@@ -83,9 +83,9 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                {{-- <th>
+                                <th>
 
-                                </th> --}}
+                                </th>
                                 <th>NIK</th>
                                 <th>No Pendaftaran</th>
                                 <th>NISN</th>
@@ -130,9 +130,9 @@
                         <tbody>
                             @foreach ($peserta as $item)
                                 <tr>
-                                    {{-- <td>
+                                    <td>
                                         <input type="checkbox" class="select_item" value="{{ $item->nik }}">
-                                    </td> --}}
+                                    </td>
 
 <td>{{ $item->nik }}</td>
 <td>{{ $item->no_pendaftaran }}</td>
