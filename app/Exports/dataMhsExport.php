@@ -68,7 +68,7 @@ $peserta->updated_at,
     public function headings(): array
     {
         return [
-            'Nik',
+            'NIK',
             'No Pendaftaran',
             'NISN',
             'NPSN',
@@ -103,8 +103,6 @@ $peserta->updated_at,
             'Sumber Air',
             'MCK',
             'Jarak ke Pusat Kota (km)',
-            'Created At',
-            'Updated At'
         ];
     }
 }
