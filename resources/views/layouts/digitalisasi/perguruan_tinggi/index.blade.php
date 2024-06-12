@@ -45,8 +45,8 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Kode Pt</th>
-                                <th>Nama Pt</th>
+                                <th>Kode Perguruan Tinggi</th>
+                                <th>Nama Perguruan Tinggi</th>
                                 <th>Action</th>
                             </tr>
                         </thead>

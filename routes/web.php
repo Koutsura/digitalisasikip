@@ -61,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/peserta/import', [App\Http\Controllers\PesertaController::class, 'import_post']);
     Route::get('/peserta/export', [App\Http\Controllers\PesertaController::class, 'export'])->name('peserta.export');
     Route::get('/peserta', [App\Http\Controllers\PesertaController::class, 'index'])->name('peserta.index');
-    Route::get('/peserta/create', [App\Http\Controllers\PesertaController::class, 'create'])->name('peserta.create');
+    Route::get('/peserta/create', [App\Http\Controllers\PesertaController::class, 'create'])->name('pengajuan_pencairan.create');
     Route::post('/peserta/store', [App\Http\Controllers\PesertaController::class, 'store'])->name('peserta.store');
     Route::get('/peserta/edit/{id}', [App\Http\Controllers\PesertaController::class, 'edit'])->name('peserta.edit');
     Route::put('/peserta/update/{id}', [App\Http\Controllers\PesertaController::class, 'update'])->name('peserta.update');
@@ -80,4 +80,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/seleksi/edit/{id}', [App\Http\Controllers\SeleksiController::class, 'edit'])->name('seleksi.edit')->middleware('superadmin');
     Route::put('/seleksi/update/{id}', [App\Http\Controllers\SeleksiController::class, 'update'])->name('seleksi.update')->middleware('superadmin');
     Route::delete('/seleksi/delete/{id}', [App\Http\Controllers\SeleksiController::class, 'destroy'])->name('seleksi.delete')->middleware('superadmin');
+
+    Route::get('/pencairan', [App\Http\Controllers\SeleksiController::class, 'index'])->name('seleksi.index')->middleware('superadmin');
+
 });
