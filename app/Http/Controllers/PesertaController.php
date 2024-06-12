@@ -6,6 +6,7 @@ use App\Models\peserta;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\dataMhsImport;
+use App\Exports\dataMhsExport;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -81,6 +82,11 @@ return view('layouts.digitalisasi.peserta.index', $data);
             return redirect()->back()->with('error', 'There was an error importing the file: ' . $e->getMessage());
         }
 
+    }
+
+    public function export()
+    {
+        return Excel::download(new dataMhsExport, 'users.xlsx');
     }
 
     /**

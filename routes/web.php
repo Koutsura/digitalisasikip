@@ -59,6 +59,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/peserta/import', [App\Http\Controllers\PesertaController::class, 'import'])->name('peserta.import');
     Route::post('/peserta/import', [App\Http\Controllers\PesertaController::class, 'import_post']);
+    Route::get('/peserta/export', [App\Http\Controllers\PesertaController::class, 'export'])->name('peserta.export');
     Route::get('/peserta', [App\Http\Controllers\PesertaController::class, 'index'])->name('peserta.index');
     Route::get('/peserta/create', [App\Http\Controllers\PesertaController::class, 'create'])->name('peserta.create');
     Route::post('/peserta/store', [App\Http\Controllers\PesertaController::class, 'store'])->name('peserta.store');

@@ -40,6 +40,9 @@
                             @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
                             <a href="{{ route('peserta.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
                             <a href="{{ route('peserta.import') }}" class="btn btn-primary mb-3">Import Data</a>
+                            <form action="{{ route('peserta.export') }}" method="GET">
+                                <button type="submit" class="btn btn-success">Download Excel</button>
+                            </form>
                             @endif
                             <form action="{{ route('peserta.index') }}" method="GET">
                                 <div class="input-group">
@@ -81,7 +84,7 @@
                         <thead>
                             <tr>
                                 <th>
-                                    
+
                                 </th>
                                 <th>nik</th>
                                 <th>no_pendaftaran</th>
