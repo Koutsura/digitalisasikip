@@ -45,11 +45,11 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>no_pendaftaran</th>
-                                <th>seleksi_penetapan</th>
-                                <th>ranking_penetapan</th>
-                                <th>kategori_penetapan</th>
-                                <th>skema_bantuan_pembiayaan</th>
+                                <th>No Pendaftaran</th>
+                                <th>Seleksi Penetapan</th>
+                                <th>Ranking Penetapan</th>
+                                <th>Kategori Penetapan</th>
+                                <th>Skema Bantuan Pembiayaan</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
