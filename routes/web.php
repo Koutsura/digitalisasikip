@@ -66,6 +66,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/peserta/edit/{id}', [App\Http\Controllers\PesertaController::class, 'edit'])->name('peserta.edit');
     Route::put('/peserta/update/{id}', [App\Http\Controllers\PesertaController::class, 'update'])->name('peserta.update');
     Route::delete('/peserta/delete/{id}', [App\Http\Controllers\PesertaController::class, 'destroy'])->name('peserta.delete');
+    Route::post('/peserta/{id}/updateStatus', [App\Http\Controllers\PesertaController::class, 'updateStatus'])->name('peserta.updateStatus');
 
     Route::get('/program_studi', [App\Http\Controllers\ProgramStudiController::class, 'index'])->name('program_studi.index')->middleware('superadmin');
     Route::get('/program_studi/create', [App\Http\Controllers\ProgramStudiController::class, 'create'])->name('program_studi.create')->middleware('superadmin');

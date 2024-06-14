@@ -89,6 +89,16 @@ return view('layouts.digitalisasi.peserta.index', $data);
         return Excel::download(new dataMhsExport, 'Data Mahasiswa.xlsx');
     }
 
+    public function updateStatus(Request $request, $id)
+{
+    $peserta = peserta::where('nik', $id)->first();
+    $peserta->status_pengajuan = $request->status ?? 'Belum Diajukan';
+    $peserta->save();
+
+    return response()->json(['status' => $peserta->status_pengajuan]);
+}
+
+
     /**
      * Store a newly created resource in storage.
      */
