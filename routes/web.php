@@ -61,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/peserta/import', [App\Http\Controllers\PesertaController::class, 'import_post']);
     Route::get('/peserta/export', [App\Http\Controllers\PesertaController::class, 'export'])->name('peserta.export');
     Route::get('/peserta', [App\Http\Controllers\PesertaController::class, 'index'])->name('peserta.index');
-    Route::get('/peserta/create', [App\Http\Controllers\PesertaController::class, 'create'])->name('pengajuan_pencairan.create');
+    Route::get('/peserta/create', [App\Http\Controllers\PesertaController::class, 'create'])->name('peserta.create');
     Route::post('/peserta/store', [App\Http\Controllers\PesertaController::class, 'store'])->name('peserta.store');
     Route::get('/peserta/edit/{id}', [App\Http\Controllers\PesertaController::class, 'edit'])->name('peserta.edit');
     Route::put('/peserta/update/{id}', [App\Http\Controllers\PesertaController::class, 'update'])->name('peserta.update');

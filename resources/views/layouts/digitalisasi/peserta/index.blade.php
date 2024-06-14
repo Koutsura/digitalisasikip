@@ -85,6 +85,7 @@
                                 <tr>
                                     <th></th>
                                     <th>Status Pengajuan</th>
+                                    <th>Permohonan Pencairan</th>
                                     <th>NIK</th>
                                     <th>No Pendaftaran</th>
                                     <th>NISN</th>
@@ -137,6 +138,7 @@
                                                 {{ $item->status_pengajuan }}
                                             </button>
                                         </td>
+                                        <td><a href="{{ route('peserta.create') }}" class="btn btn-success">Ajukan Pencairan</a></td>
                                         <td>{{ $item->nik }}</td>
                                         <td>{{ $item->no_pendaftaran }}</td>
                                         <td>{{ $item->nisn }}</td>
