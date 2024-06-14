@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tambah Data Mahasiswa')
+@section('title', 'Ajukan Pencairan')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -8,168 +8,77 @@
 
 @section('content')
 <div class="main-content">
-        <section class="section">
-            <div class="section-header">
-                <h1>Tambah Data Mahasiswa</h1>
+    <section class="section">
+        <div class="section-header">
+            <h1>Ajukan Pencairan</h1>
+        </div>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <label for="kategori_mahasiswa_penerima" class="mb-1">Kategori Mahasiswa Penerima<span class="text-danger">*</span></label>
+                <div>
+                    <input type="radio" name="kategori_mahasiswa_penerima" value="Penerima Baru"  class="me-1" required> Penerima Baru
+                    <input type="radio" name="kategori_mahasiswa_penerima" value="Penerima Ongoing" class="ms-3 me-1" required> Penerima Ongoing
+                </div>
             </div>
-                <form action="{{ route('peserta.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <label for="nik">NIK</label>
-                        <input type="text" name="nik" id="nik" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="no_pendaftaran">No Pendaftaran</label>
-                        <input type="number" name="no_pendaftaran" id="no_pendaftaran" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nisn">NISN</label>
-                        <input type="text" name="nisn" id="nisn" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="npsn">NPSN</label>
-                        <input type="text" name="npsn" id="npsn" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control" required maxlength="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="nim">NIM</label>
-                        <input type="text" name="nim" id="nim" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="no_kk">No KK</label>
-                        <input type="text" name="no_kk" id="no_kk" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="nama_mahasiswa">Nama Mahasiswa</label>
-                        <input type="text" name="nama_mahasiswa" id="nama_mahasiswa" class="form-control" required maxlength="200">
-                    </div>
-                    <div class="form-group">
-                        <label for="tempat_lahir">Tempat Lahir</label>
-                        <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control" required maxlength="200">
-                    </div>
-                    <div class="form-group">
-                        <label for="tanggal_lahir">Tanggal Lahir</label>
-                        <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="jenis_kelamin">Jenis Kelamin</label>
-                        <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
-                            <option value="Laki-laki">Laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="alamat">Alamat</label>
-                        <input type="text" name="alamat" id="alamat" class="form-control" required maxlength="255">
-                    </div>
-                    <div class="form-group">
-                        <label for="no_hp">No HP</label>
-                        <input type="text" name="no_hp" id="no_hp" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="no_kip">No KIP</label>
-                        <input type="text" name="no_kip" id="no_kip" class="form-control" maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="no_kks">No KKS</label>
-                        <input type="text" name="no_kks" id="no_kks" class="form-control" maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="asal_sekolah">Asal Sekolah</label>
-                        <input type="text" name="asal_sekolah" id="asal_sekolah" class="form-control" required maxlength="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="kab_kota_sekolah">Kab/Kota Sekolah</label>
-                        <input type="text" name="kab_kota_sekolah" id="kab_kota_sekolah" class="form-control" required maxlength="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="prov_sekolah">Provinsi Sekolah</label>
-                        <input type="text" name="prov_sekolah" id="prov_sekolah" class="form-control" required maxlength="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="nama_ayah">Nama Ayah</label>
-                        <input type="text" name="nama_ayah" id="nama_ayah" class="form-control" required maxlength="200">
-                    </div>
-                    <div class="form-group">
-                        <label for="pekerjaan_ayah">Pekerjaan Ayah</label>
-                        <input type="text" name="pekerjaan_ayah" id="pekerjaan_ayah" class="form-control" required maxlength="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="penghasilan_ayah">Penghasilan Ayah</label>
-                        <input type="text" name="penghasilan_ayah" id="penghasilan_ayah" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="status_ayah">Status Ayah</label>
-                        <select name="status_ayah" id="status_ayah" class="form-control" required>
-                            <option value="Hidup">Hidup</option>
-                            <option value="Meninggal">Meninggal</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="nama_ibu">Nama Ibu</label>
-                        <input type="text" name="nama_ibu" id="nama_ibu" class="form-control" required maxlength="200">
-                    </div>
-                    <div class="form-group">
-                        <label for="pekerjaan_ibu">Pekerjaan Ibu</label>
-                        <input type="text" name="pekerjaan_ibu" id="pekerjaan_ibu" class="form-control" required maxlength="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="penghasilan_ibu">Penghasilan Ibu</label>
-                        <input type="text" name="penghasilan_ibu" id="penghasilan_ibu" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="status_ibu">Status Ibu</label>
-                        <select name="status_ibu" id="status_ibu" class="form-control" required>
-                            <option value="Hidup">Hidup</option>
-                            <option value="Meninggal">Meninggal</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="jumlah_tanggungan">Jumlah Tanggungan</label>
-                        <input type="number" name="jumlah_tanggungan" id="jumlah_tanggungan" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="kepemilikan_rumah">Kepemilikan Rumah</label>
-                        <input type="text" name="kepemilikan_rumah" id="kepemilikan_rumah" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="tahun_perolehan_rumah">Tahun Perolehan Rumah</label>
-                        <input type="number" name="tahun_perolehan_rumah" id="tahun_perolehan_rumah" class="form-control" required min="1900" max="2099">
-                    </div>
-                    <div class="form-group">
-                        <label for="sumber_listrik">Sumber Listrik</label>
-                        <input type="text" name="sumber_listrik" id="sumber_listrik" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="luas_tanah">Luas Tanah (m2)</label>
-                        <input type="number" name="luas_tanah" id="luas_tanah" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="luas_bangunan">Luas Bangunan (m2)</label>
-                        <input type="number" name="luas_bangunan" id="luas_bangunan" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="sumber_air">Sumber Air</label>
-                        <input type="text" name="sumber_air" id="sumber_air" class="form-control" required maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label for="mck">MCK</label>
-                        <input type="text" name="mck" id="mck" class="form-control" required maxlength="10">
-                    </div>
-                    <div class="form-group">
-                        <label for="jarak_pusat_kota_km">Jarak ke Pusat Kota (km)</label>
-                        <input type="number" name="jarak_pusat_kota_km" id="jarak_pusat_kota_km" class="form-control" required>
-                    </div>
-
-
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
+            <div class="form-group">
+                <label for="bank_penyalur" class="mb-1">Bank Penyalur<span class="text-danger">*</span></label>
+                <select name="bank_penyalur" id="bank_penyalur" class="form-control" required>
+                    <option value="">- Pilih Bank Penyalur -</option>
+                    <!-- Add options here -->
+                </select>
             </div>
-        </section>
-    </div>
+            <div class="form-group">
+                <label for="perguruan_tinggi" class="mb-1">Perguruan Tinggi<span class="text-danger">*</span></label>
+                <select name="perguruan_tinggi" id="perguruan_tinggi" class="form-control" required>
+                    <option value="">Pilih perguruan tinggi</option>
+                    <!-- Add options here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="no_sk_surat_Ajukan" class="mb-1">No. SK/Surat Ajukan<span class="text-danger">*</span></label>
+                <input type="text" name="no_sk_surat_Ajukan" id="no_sk_surat_Ajukan" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="tanggal_surat" class="mb-1">Tanggal Surat<span class="text-danger">*</span></label>
+                <input type="date" name="tanggal_surat" id="tanggal_surat" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="keterangan_tambahan" class="mb-1">Keterangan Tambahan</label>
+                <textarea name="keterangan_tambahan" id="keterangan_tambahan" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="scan_surat_Ajukan_jpg" class="mb-1">Scan Surat Ajukan (JPG, opsional)</label>
+                <input type="file" name="scan_surat_Ajukan_jpg" id="scan_surat_Ajukan_jpg" class="form-control" accept=".jpg,.jpeg,.png">
+            </div>
+            <div class="form-group">
+                <label for="scan_surat_Ajukan_pdf" class="mb-1">Scan Surat Ajukan (PDF, wajib)<span class="text-danger">*</span></label>
+                <input type="file" name="scan_surat_Ajukan_pdf" id="scan_surat_Ajukan_pdf" class="form-control" accept=".pdf" required>
+            </div>
+            <div class="form-group">
+                <label for="nama_bank_pt" class="mb-1">Nama Bank PT<span class="text-danger">*</span></label>
+                <select name="nama_bank_pt" id="nama_bank_pt" class="form-control" required>
+                    <option value="">- Pilih Bank -</option>
+                    <!-- Add options here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="no_rekening_pt" class="mb-1">No. Rekening PT<span class="text-danger">*</span></label>
+                <input type="text" name="no_rekening_pt" id="no_rekening_pt" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="rekening_pt_atas_nama" class="mb-1">Rekening PT Atas Nama<span class="text-danger">*</span></label>
+                <input type="text" name="rekening_pt_atas_nama" id="rekening_pt_atas_nama" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="scan_sptjm_pdf" class="mb-1">Scan SPTJM (Surat Pernyataan Tanggung Jawab Mutlak) (PDF, wajib)<span class="text-danger">*</span></label>
+                <input type="file" name="scan_sptjm_pdf" id="scan_sptjm_pdf" class="form-control" accept=".pdf" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary me-1">Simpan Ajukan</button>
+                <button type="button" class="btn btn-secondary" onclick="history.back();">Kembali</button>
+            </div>
+        </form>
+    </section>
+</div>
 @endsection
