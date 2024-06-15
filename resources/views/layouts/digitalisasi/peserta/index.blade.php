@@ -121,6 +121,8 @@
                                     <th>Sumber Air</th>
                                     <th>MCK</th>
                                     <th>Jarak Pusat Kota (km)</th>
+                                    <th>program_studi</th>
+                                    <th>perguruan_tinggi</th>
 
                                     @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
                                         <th>Aksi</th>
@@ -174,6 +176,8 @@
                                         <td>{{ $item->sumber_air }}</td>
                                         <td>{{ $item->mck }}</td>
                                         <td>{{ $item->jarak_pusat_kota_km }}</td>
+                                        <td>{{ $item->program_studi }}</td>
+                                        <td>{{ $item->perguruan_tinggi }}</td>
 
                                         @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
                                             <td>

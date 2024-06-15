@@ -22,9 +22,9 @@ class PesertaController extends Controller
 $query = peserta::query();
 
 $user = auth()->user();
-    $no_pendaftaran = $user->name;
+    $perguruan_tinggi = $user->operator;
 
-    $peserta = Peserta::where('no_pendaftaran', $no_pendaftaran)->get();
+    $peserta = Peserta::where('perguruan_tinggi', $perguruan_tinggi)->get();
 
     return view('layouts.digitalisasi.peserta.index', compact('peserta'));
 
@@ -158,6 +158,8 @@ return view('layouts.digitalisasi.peserta.index', $data);
         $peserta->sumber_air = $request-> sumber_air;
         $peserta->mck = $request-> mck;
         $peserta->jarak_pusat_kota_km = $request-> jarak_pusat_kota_km;
+        $peserta->program_studi = $request-> program_studi;
+        $peserta->perguruan_tinggi = $request-> perguruan_tinggi;
 
 
         /* if ($request->hasFile('image_akreditasi')) {
@@ -247,6 +249,8 @@ return view('layouts.digitalisasi.peserta.index', $data);
         $peserta->sumber_air = $request-> sumber_air;
         $peserta->mck = $request-> mck;
         $peserta->jarak_pusat_kota_km = $request-> jarak_pusat_kota_km;
+        $peserta->program_studi = $request-> program_studi;
+        $peserta->perguruan_tinggi = $request-> perguruan_tinggi;
 
        /*  if ($request->hasFile('image_akreditasi')) {
             // Hapus gambar sebelumnya jika diganti

@@ -82,6 +82,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/seleksi/update/{id}', [App\Http\Controllers\SeleksiController::class, 'update'])->name('seleksi.update')->middleware('superadmin');
     Route::delete('/seleksi/delete/{id}', [App\Http\Controllers\SeleksiController::class, 'destroy'])->name('seleksi.delete')->middleware('superadmin');
 
-    Route::get('/pencairan', [App\Http\Controllers\SeleksiController::class, 'index'])->name('seleksi.index')->middleware('superadmin');
-
+    /* Route::get('/pencairan', [App\Http\Controllers\SeleksiController::class, 'index'])->name('seleksi.index')->middleware('superadmin'); */
+    Route::get('/pencairan', [App\Http\Controllers\PencairanController::class, 'index'])->name('pencairan.index');
 });

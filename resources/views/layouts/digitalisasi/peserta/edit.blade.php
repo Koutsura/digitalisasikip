@@ -58,7 +58,7 @@
                 </div>
                 <div class="form-group">
                     <label for="jenis_kelamin">Jenis Kelamin</label>
-                    <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
+                    <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">Jenis Kelamin
                         <option value="L" {{ $peserta->jenis_kelamin == 'L' ? 'selected' : '' }}>Laki-laki</option>
                         <option value="P" {{ $peserta->jenis_kelamin == 'P' ? 'selected' : '' }}>Perempuan</option>
                     </select>
@@ -164,6 +164,25 @@
                 <div class="form-group">
                     <label for="jarak_pusat_kota_km">Jarak ke Pusat Kota (km)</label>
                     <input type="number" name="jarak_pusat_kota_km" id="jarak_pusat_kota_km" class="form-control" value="{{ $peserta->jarak_pusat_kota_km }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="program_studi">Program Studi</label>
+                    <input type="text" name="program_studi" id="program_studi" class="form-control" value="{{ $peserta->program_studi }}" maxlength="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="perguruan_tinggi">Perguruan Tinggi</label>
+                    <select name="perguruan_tinggi" id="jenis_kelamin" class="form-control">Perguruan Tinggi
+                        <option value="Universitas Bina Darma" {{ $peserta->perguruan_tinggi == 'Universitas Bina Darma' ? 'selected' : '' }}>Universitas Bina Darma</option>
+                        <option value="Universitas Lampung (UNILA)" {{ $peserta->perguruan_tinggi == 'Universitas Lampung (UNILA)' ? 'selected' : '' }}>Universitas Lampung (UNILA)</option>
+                        <option value="Universitas Sriwijaya" {{ $peserta->perguruan_tinggi == 'Universitas Sriwijaya' ? 'selected' : '' }}>Universitas Sriwijaya</option>
+                        <option value="POLITEKNIK NEGERI SRIWIJAYA (POLSRI)" {{ $peserta->perguruan_tinggi == 'POLITEKNIK NEGERI SRIWIJAYA (POLSRI)' ? 'selected' : '' }}>POLITEKNIK NEGERI SRIWIJAYA (POLSRI)</option>
+                        <option value="Universitas Mitra Indonesia (UMITRA)" {{ $peserta->perguruan_tinggi == 'Universitas Mitra Indonesia (UMITRA)' ? 'selected' : '' }}>Universitas Mitra Indonesia (UMITRA)</option>
+                        <option value="Universitas Teknokrat Indonesia" {{ $peserta->perguruan_tinggi == 'L' ? 'Universitas Teknokrat Indonesia' : '' }}>Universitas Teknokrat Indonesia</option>
+                        <option value="Institut Teknologi dan Bisnis PalComTech Palembang" {{ $peserta->perguruan_tinggi == 'Institut Teknologi dan Bisnis PalComTech Palembang' ? 'selected' : '' }}>Institut Teknologi dan Bisnis PalComTech Palembang</option>
+                        <option value="Universitas Aisyah Pringsewu" {{ $peserta->perguruan_tinggi == 'Universitas Aisyah Pringsewu' ? 'selected' : '' }}>Universitas Aisyah Pringsewu</option>
+                    </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Update</button>

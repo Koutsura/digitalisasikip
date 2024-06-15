@@ -47,22 +47,15 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'operator' => ['required', 'string', 'in:
-            Universitas Bina Darma
-            ,Universitas Lampung (UNILA)
-            ,Universitas Sriwijaya
-            ,POLITEKNIK NEGERI SRIWIJAYA
-            ,Universitas Mitra Indonesia
-            ,Universitas Teknokrat Indonesia
-            ,Institut Teknologi dan Bisnis PalComTech Palembang
-            ,Universitas Aisyah Pringsewu'],
-        ]);
-    }
+{
+    return Validator::make($data, [
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+        'operator' => ['required', 'string', 'in:Universitas Bina Darma,Universitas Lampung (UNILA),Universitas Sriwijaya,POLITEKNIK NEGERI SRIWIJAYA,Universitas Mitra Indonesia,Universitas Teknokrat Indonesia,Institut Teknologi dan Bisnis PalComTech Palembang,Universitas Aisyah Pringsewu'],
+    ]);
+}
+
 
     /**
      * Create a new user instance after a valid registration.

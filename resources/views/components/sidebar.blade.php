@@ -36,7 +36,7 @@
             @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
             <li class="menu-header">Pages</li>
             <li class="{{ Request::is('peserta') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('peserta') }}"><i class="fas fa-newspaper"></i> <span>Data Mahasiswa</span></a>
+                <a class="nav-link" href="{{ url('peserta') }}"><i class="fas fa-university"></i> <span>Data Mahasiswa</span></a>
             </li>
              @endif
              @if (auth()->user()->role == 'program_studi' || auth()->user()->role == 'superadmin')
@@ -54,6 +54,12 @@
                 <a class="nav-link" href="{{ url('seleksi') }}"><i class="fas fa-university"></i> <span>Penetapan</span></a>
             </li>
              @endif
+
+             @if (auth()->user()->role == 'pencairan' || auth()->user()->role == 'superadmin')
+             <li class="{{ Request::is('pencairan') ? 'active' : '' }}">
+                 <a class="nav-link" href="{{ url('pencairan') }}"><i class="fas fa-newspaper"></i> <span>Data Mahasiswa Eligible</span></a>
+             </li>
+              @endif
 
         </ul>
     </aside>

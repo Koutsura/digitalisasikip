@@ -56,6 +56,8 @@ $peserta->luas_bangunan ,
 $peserta->sumber_air ,
 $peserta->mck ,
 $peserta->jarak_pusat_kota_km ,
+$peserta->program_studi,
+$peserta->perguruan_tinggi,
 // $peserta->created_at,
 // $peserta->updated_at,
 
@@ -103,6 +105,8 @@ $peserta->jarak_pusat_kota_km ,
             'Sumber Air',
             'MCK',
             'Jarak ke Pusat Kota (km)',
+            'program_studi',
+            'perguruan_tinggi',
         ];
     }
 }

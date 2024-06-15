@@ -51,6 +51,21 @@ class peserta extends Model
 'mck',
 'jarak_pusat_kota_km',
 
+  'program_studi',
+  'perguruan_tinggi',
+  'kategori_mahasiswa_penerima',
+  'bank_penyalur',
+  'no_sk_surat_Ajukan',
+  'tanggal_surat',
+  'keterangan_tambahan',
+  'scan_surat_ajukan_jpg',
+  'scan_surat_ajukan_pdf',
+  'nama_bank_pt',
+  'no_rekening_pt',
+  'rekening_pt_atas_nama',
+  'scan_sptjm_pdf',
+
+
         'created_at',
         'updated_at'
     ];

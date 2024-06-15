@@ -60,6 +60,8 @@ $peserta->luas_bangunan = $row[31];
 $peserta->sumber_air = $row[32];
 $peserta->mck = $row[33];
 $peserta->jarak_pusat_kota_km = $row[34];
+$peserta->program_studi = $row[35];
+$peserta->perguruan_tinggi = $row[36];
 $peserta->save();
 
 
