@@ -127,6 +127,7 @@
 </div>
 @endsection
 
+
 @push('scripts')
     <!-- JS Libraries -->
 

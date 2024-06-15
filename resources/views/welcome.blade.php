@@ -121,6 +121,49 @@
         top: 68px;
         object-fit: cover;
     }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+        .welcome {
+            padding: 20px;
+            height: auto;
+        }
+        .sistem-pencairan-kip-kuliah-merdeka {
+            font-size: 24px;
+            left: 20px;
+            top: 100px;
+            width: auto;
+            text-align: center;
+        }
+        .kartu-indonesia-pintar-kuliah-kip-kuliah-adalah-salah-satu-upaya-untuk-membantu-asa-para-siswa-yang-memiliki-keterbatasan-ekonomi-tetapi-berprestasi-untuk-melanjutkan-studi-di-perguruan-tinggi {
+            font-size: 16px;
+            left: 20px;
+            top: 200px;
+            width: auto;
+            margin-right: 20px;
+            text-align: center;
+        }
+        ._1-2 {
+            width: 100%;
+            height: auto;
+            left: 0;
+            top: 300px;
+        }
+        .button, .button2 {
+            width: 100%;
+            max-width: 200px;
+            margin: 10px auto;
+            position: static;
+            display: block;
+        }
+        .whats-app-image-2024-03-06-at-14-23, .logo-kampus-merdeka-kemendikbud-1 {
+            width: 100px;
+            height: auto;
+            margin: 20px auto;
+            position: static;
+            display: block;
+        }
+    }
 </style>
 
 <div class="welcome">

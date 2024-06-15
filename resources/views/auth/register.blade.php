@@ -63,6 +63,33 @@
                             </div>
                         </div>
 
+
+                        <div class="row mb-3">
+                            <label for="operator" class="col-md-4 col-form-label text-md-end">{{ __('Operator') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="operator" class="form-control @error('operator') is-invalid @enderror" name="operator" required>
+                                    <option value="">-- Pilih Operator --</option>
+                                    <option value="operator1" {{ old('operator') == 'operator1' ? 'selected' : '' }}>Universitas Bina Darma</option>
+                                    <option value="operator2" {{ old('operator') == 'operator2' ? 'selected' : '' }}>Universitas Lampung (UNILA)</option>
+                                    <option value="operator3" {{ old('operator') == 'operator3' ? 'selected' : '' }}>Universitas Sriwijaya</option>
+                                    <option value="operator4" {{ old('operator') == 'operator4' ? 'selected' : '' }}>POLITEKNIK NEGERI SRIWIJAYA (POLSRI)</option>
+                                    <option value="operator5" {{ old('operator') == 'operator5' ? 'selected' : '' }}>Universitas Mitra Indonesia (UMITRA)</option>
+                                    <option value="operator6" {{ old('operator') == 'operator6' ? 'selected' : '' }}>Universitas Teknokrat Indonesia</option>
+                                    <option value="operator7" {{ old('operator') == 'operator7' ? 'selected' : '' }}>Institut Teknologi dan Bisnis PalComTech Palembang</option>
+                                    <option value="operator8" {{ old('operator') == 'operator8' ? 'selected' : '' }}>Universitas Aisyah Pringsewu</option>
+                                </select>
+
+                                @error('operator')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4 text-center">
                                 <button type="submit" class="btn btn-primary">
