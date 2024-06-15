@@ -70,14 +70,14 @@
                             <div class="col-md-6">
                                 <select id="operator" class="form-control @error('operator') is-invalid @enderror" name="operator" required>
                                     <option value="">-- Pilih Operator --</option>
-                                    <option value="operator1" {{ old('operator') == 'operator1' ? 'selected' : '' }}>Universitas Bina Darma</option>
-                                    <option value="operator2" {{ old('operator') == 'operator2' ? 'selected' : '' }}>Universitas Lampung (UNILA)</option>
-                                    <option value="operator3" {{ old('operator') == 'operator3' ? 'selected' : '' }}>Universitas Sriwijaya</option>
-                                    <option value="operator4" {{ old('operator') == 'operator4' ? 'selected' : '' }}>POLITEKNIK NEGERI SRIWIJAYA (POLSRI)</option>
-                                    <option value="operator5" {{ old('operator') == 'operator5' ? 'selected' : '' }}>Universitas Mitra Indonesia (UMITRA)</option>
-                                    <option value="operator6" {{ old('operator') == 'operator6' ? 'selected' : '' }}>Universitas Teknokrat Indonesia</option>
-                                    <option value="operator7" {{ old('operator') == 'operator7' ? 'selected' : '' }}>Institut Teknologi dan Bisnis PalComTech Palembang</option>
-                                    <option value="operator8" {{ old('operator') == 'operator8' ? 'selected' : '' }}>Universitas Aisyah Pringsewu</option>
+                                    <option value="Universitas Bina Darma" {{ old('operator') == 'Universitas Bina Darma' ? 'selected' : '' }}>Universitas Bina Darma</option>
+                                    <option value="Universitas Lampung (UNILA)" {{ old('operator') == 'Universitas Lampung (UNILA)' ? 'selected' : '' }}>Universitas Lampung (UNILA)</option>
+                                    <option value="Universitas Sriwijaya" {{ old('operator') == 'Universitas Sriwijaya' ? 'selected' : '' }}>Universitas Sriwijaya</option>
+                                    <option value="POLITEKNIK NEGERI SRIWIJAYA" {{ old('operator') == 'POLITEKNIK NEGERI SRIWIJAYA' ? 'selected' : '' }}>POLITEKNIK NEGERI SRIWIJAYA (POLSRI)</option>
+                                    <option value="Universitas Mitra Indonesia" {{ old('operator') == 'Universitas Mitra Indonesia' ? 'selected' : '' }}>Universitas Mitra Indonesia (UMITRA)</option>
+                                    <option value="Universitas Teknokrat Indonesia" {{ old('operator') == 'Universitas Teknokrat Indonesia' ? 'selected' : '' }}>Universitas Teknokrat Indonesia</option>
+                                    <option value="Institut Teknologi dan Bisnis PalComTech Palembang" {{ old('operator') == 'Institut Teknologi dan Bisnis PalComTech Palembang' ? 'selected' : '' }}>Institut Teknologi dan Bisnis PalComTech Palembang</option>
+                                    <option value="Universitas Aisyah Pringsewu" {{ old('operator') == 'Universitas Aisyah Pringsewu' ? 'selected' : '' }}>Universitas Aisyah Pringsewu</option>
                                 </select>
 
                                 @error('operator')

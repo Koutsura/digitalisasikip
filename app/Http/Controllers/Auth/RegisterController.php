@@ -52,7 +52,15 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'operator' => ['required', 'string', 'in:operator1,operator2,operator3,operator4,operator5,operator6,operator7,operator8'],
+            'operator' => ['required', 'string', 'in:
+            Universitas Bina Darma
+            ,Universitas Lampung (UNILA)
+            ,Universitas Sriwijaya
+            ,POLITEKNIK NEGERI SRIWIJAYA
+            ,Universitas Mitra Indonesia
+            ,Universitas Teknokrat Indonesia
+            ,Institut Teknologi dan Bisnis PalComTech Palembang
+            ,Universitas Aisyah Pringsewu'],
         ]);
     }
 
