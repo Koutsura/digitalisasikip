@@ -21,6 +21,13 @@ class PesertaController extends Controller
         $search = $request->get('search');
 $query = peserta::query();
 
+$user = auth()->user();
+    $no_pendaftaran = $user->name;
+
+    $peserta = Peserta::where('no_pendaftaran', $no_pendaftaran)->get();
+
+    return view('layouts.digitalisasi.peserta.index', compact('peserta'));
+
 if ($search) {
     // Jika ada pencarian, tambahkan kondisi untuk nama_mhs
     $query->where('nik', 'like', "%{$search}%");
