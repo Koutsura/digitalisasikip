@@ -67,6 +67,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/peserta/update/{id}', [App\Http\Controllers\PesertaController::class, 'update'])->name('peserta.update');
     Route::delete('/peserta/delete/{id}', [App\Http\Controllers\PesertaController::class, 'destroy'])->name('peserta.delete');
     Route::post('/peserta/{id}/updateStatus', [App\Http\Controllers\PesertaController::class, 'updateStatus'])->name('peserta.updateStatus');
+    Route::get('/peserta/showDownloadPage', [App\Http\Controllers\PesertaController::class, 'showDownloadPage'])->name('peserta.showDownloadPage');
+Route::get('/peserta/downloadTemplate', [App\Http\Controllers\PesertaController::class, 'downloadTemplate'])->name('peserta.downloadTemplate');
 
     Route::get('/program_studi', [App\Http\Controllers\ProgramStudiController::class, 'index'])->name('program_studi.index')->middleware('superadmin');
     Route::get('/program_studi/create', [App\Http\Controllers\ProgramStudiController::class, 'create'])->name('program_studi.create')->middleware('superadmin');

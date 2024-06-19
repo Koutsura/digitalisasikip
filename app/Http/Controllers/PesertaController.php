@@ -8,6 +8,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\dataMhsImport;
 use App\Exports\dataMhsExport;
 use Illuminate\Support\Facades\Validator;
+use App\Exports\TemplateExport;
 
 
 
@@ -105,6 +106,16 @@ return view('layouts.digitalisasi.peserta.index', $data);
     return response()->json(['status' => $peserta->status_pengajuan]);
 }
 
+public function showDownloadPage()
+    {
+        return view('peserta.index');
+    }
+
+    public function downloadTemplate()
+    {
+        $fileName = 'template.xlsx';
+        return Excel::download(new TemplateExport(), $fileName);
+    }
 
     /**
      * Store a newly created resource in storage.

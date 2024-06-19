@@ -49,6 +49,7 @@
                                     <button type="submit" class="btn btn-success">Unduh Excel</button>
                                 </form>
                             @endif
+                            <a href="{{ route('peserta.downloadTemplate') }}" class="btn btn-primary">Download Template</a>
                             <form action="{{ route('peserta.index') }}" method="GET">
                                 <div class="input-group">
                                     <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan NIK Mahasiswa...">
@@ -59,6 +60,10 @@
                             </form>
                         </div>
                     </div>
+
+
+
+
 
                     <form action="{{ route('peserta.index') }}" method="GET">
                         <div class="form-group">
