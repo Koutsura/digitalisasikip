@@ -23,11 +23,16 @@ class PesertaController extends Controller
 $query = peserta::query();
 
 $user = auth()->user();
-    $perguruan_tinggi = $user->operator;
+$perguruan_tinggi = $user->operator;
 
+if ($perguruan_tinggi) {
     $peserta = Peserta::where('perguruan_tinggi', $perguruan_tinggi)->get();
+} else {
+    $peserta = Peserta::all();
+}
 
-    return view('layouts.digitalisasi.peserta.index', compact('peserta'));
+return view('layouts.digitalisasi.peserta.index', compact('peserta'));
+
 
 if ($search) {
     // Jika ada pencarian, tambahkan kondisi untuk nama_mhs
