@@ -27,43 +27,40 @@
             <div class="section-body">
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Ubah Status Mahasiswa
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item change-status" data-status="Diajukan" href="{{ route('peserta.index') }}">Diajukan</a>
-                                <a class="dropdown-item change-status" data-status="Dibatalkan" href="{{ route('peserta.index') }}">Dibatalkan</a>
-                                <a class="dropdown-item change-status" data-status="Lulus" href="{{ route('peserta.index') }}">Lulus</a>
-                                <a class="dropdown-item change-status" data-status="Cuti" href="{{ route('peserta.index') }}">Cuti</a>
+                        @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
+                            <a href="{{ route('peserta.downloadTemplate') }}" class="btn btn-info me-1"><i class="fa fa-download"></i> Download Template</a>
+                            <a href="{{ route('peserta.import') }}" class="btn btn-primary me-1"><i class="fa fa-upload"></i> Import Data</a>
+                            <a href="{{ route('peserta.export') }}" method="GET" class="btn btn-success"><i class="fa fa-download"></i> Download Data</a>
+                            {{-- <form action="{{ route('peserta.export') }}" method="GET">
+                                <button type="submit" class="btn btn-success">Unduh Excel</button>
+                            </form> --}}
+                        @endif
+                        <div class="row mb-3 mt-3">
+                            <div class="col-md-6">
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Ubah Status Mahasiswa
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item change-status" data-status="Diajukan" href="{{ route('peserta.index') }}">Diajukan</a>
+                                        <a class="dropdown-item change-status" data-status="Dibatalkan" href="{{ route('peserta.index') }}">Dibatalkan</a>
+                                        <a class="dropdown-item change-status" data-status="Lulus" href="{{ route('peserta.index') }}">Lulus</a>
+                                        <a class="dropdown-item change-status" data-status="Cuti" href="{{ route('peserta.index') }}">Cuti</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <form action="{{ route('peserta.index') }}" method="GET">
+                            <div class="input-group mt-3">
+                                <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan NIK Mahasiswa...">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary ms-2" type="submit">Cari</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            @if (auth()->user()->role == 'peserta' || auth()->user()->role == 'superadmin')
-                                <a href="{{ route('peserta.import') }}" class="btn btn-primary mb-3">Import Data</a>
-                                <form action="{{ route('peserta.export') }}" method="GET">
-                                    <button type="submit" class="btn btn-success">Unduh Excel</button>
-                                </form>
-                            @endif
-                            <a href="{{ route('peserta.downloadTemplate') }}" class="btn btn-primary">Download Template</a>
-                            <form action="{{ route('peserta.index') }}" method="GET">
-                                <div class="input-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan NIK Mahasiswa...">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" style="margin-left:5px;" type="submit">Cari</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-
-
-
 
                     <form action="{{ route('peserta.index') }}" method="GET">
                         <div class="form-group">
@@ -81,7 +78,7 @@
                                 <option value="PagarAlam">PagarAlam</option>
                             </select>
                             <div class="input-group-append">
-                                <button class="btn btn-primary ml-auto" type="submit">Cari</button>
+                                <button class="btn btn-primary mt-2" type="submit">Cari</button>
                             </div>
                         </div>
 
