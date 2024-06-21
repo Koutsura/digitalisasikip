@@ -177,8 +177,8 @@
                         <option value="Universitas Bina Darma" {{ $peserta->perguruan_tinggi == 'Universitas Bina Darma' ? 'selected' : '' }}>Universitas Bina Darma</option>
                         <option value="Universitas Lampung (UNILA)" {{ $peserta->perguruan_tinggi == 'Universitas Lampung (UNILA)' ? 'selected' : '' }}>Universitas Lampung (UNILA)</option>
                         <option value="Universitas Sriwijaya" {{ $peserta->perguruan_tinggi == 'Universitas Sriwijaya' ? 'selected' : '' }}>Universitas Sriwijaya</option>
-                        <option value="POLITEKNIK NEGERI SRIWIJAYA (POLSRI)" {{ $peserta->perguruan_tinggi == 'POLITEKNIK NEGERI SRIWIJAYA (POLSRI)' ? 'selected' : '' }}>POLITEKNIK NEGERI SRIWIJAYA (POLSRI)</option>
-                        <option value="Universitas Mitra Indonesia (UMITRA)" {{ $peserta->perguruan_tinggi == 'Universitas Mitra Indonesia (UMITRA)' ? 'selected' : '' }}>Universitas Mitra Indonesia (UMITRA)</option>
+                        <option value="POLITEKNIK NEGERI SRIWIJAYA" {{ $peserta->perguruan_tinggi == 'POLITEKNIK NEGERI SRIWIJAYA' ? 'selected' : '' }}>POLITEKNIK NEGERI SRIWIJAYA</option>
+                        <option value="Universitas Mitra Indonesia" {{ $peserta->perguruan_tinggi == 'Universitas Mitra Indonesia' ? 'selected' : '' }}>Universitas Mitra Indonesia</option>
                         <option value="Universitas Teknokrat Indonesia" {{ $peserta->perguruan_tinggi == 'L' ? 'Universitas Teknokrat Indonesia' : '' }}>Universitas Teknokrat Indonesia</option>
                         <option value="Institut Teknologi dan Bisnis PalComTech Palembang" {{ $peserta->perguruan_tinggi == 'Institut Teknologi dan Bisnis PalComTech Palembang' ? 'selected' : '' }}>Institut Teknologi dan Bisnis PalComTech Palembang</option>
                         <option value="Universitas Aisyah Pringsewu" {{ $peserta->perguruan_tinggi == 'Universitas Aisyah Pringsewu' ? 'selected' : '' }}>Universitas Aisyah Pringsewu</option>
